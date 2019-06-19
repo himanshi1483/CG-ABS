@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+}
+
+<section class="breadcrumb_area br_image">
+    <div class="container">
+        <div class="page-cover text-center">
+            <h2 class="page-cover-tittle">वैवाहिक परिचय विवरणिका</h2>
+            <!--<ol class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Contact Us</li>
+            </ol>-->
+        </div>
+    </div>
+</section>
+<section class="contact_area section_gap" style="font-size:17px !important">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="padding-left:10%; padding-right:10%;">
+                <form>
+                    <div class="form-group row">
+                        <label for="imgUpload" class="col-md-2 col-form-label">फोटो अपलोड करें </label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control" id="imgUpload">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtFullName" class="col-md-2 col-form-label">पूरा नाम</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtFullName">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtBirthday" class="col-md-2 col-form-label">जन्म तिथि, समय </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtBirthday">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtBirthPlace" class="col-md-2 col-form-label">जन्म स्थान  </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtBirthPlace">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtFather" class="col-md-2 col-form-label">पिता का नाम </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtFather">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtMother" class="col-md-2 col-form-label">माता का नाम </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtMother">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtGotra" class="col-md-2 col-form-label">गोत्र </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtGotra">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtEdu" class="col-md-2 col-form-label">शिक्षा </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtEdu">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtJob" class="col-md-2 col-form-label">कार्य / व्यवसाय </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtJob">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-2 col-form-label">वार्षिक आय  </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtIncome">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-2 col-form-label">वैवाहिक स्थिति - पुनर्विवाह के लिए आवश्यक</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtMaritalStatus">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-2 col-form-label">भाई (वैवाहिक स्थिति सहित)</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtBrother">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-2 col-form-label">बहन (वैवाहिक स्थिति सहित)</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtSister">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-2 col-form-label">ब्राम्हण प्रकार</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtType">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-2 col-form-label">आयु में अंतर</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtDifference">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-2 col-form-label">स्वीकार्यता</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtAgree">
+                        </div>
+                    </div><div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-2 col-form-label">पालक का संपर्क नंबर</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtGuardian">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-2 col-form-label">पूरा पता </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtFullName">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-2 col-form-label">जानकारी प्रदान करने वाले प्रतिनिधि का नाम व  नंबर </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtInfo">
+                        </div>
+                    </div>
+
+                    <p>
+                        नोट: वैवाहिक विवरण विस्तार में भरना अनिवार्य है
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div style="text-align:center">
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+</section>
+
