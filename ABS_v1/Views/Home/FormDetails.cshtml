@@ -1,0 +1,159 @@
+﻿@model ABS_v1.Models.FormData
+@{
+    ViewBag.Title = "FormDetails";
+}
+
+<section class="breadcrumb_area br_image">
+    <div class="container">
+        <div class="page-cover text-center">
+            <h2 class="page-cover-tittle">आवेदक की विस्तृत जानकारी</h2>
+            <!--<ol class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Contact Us</li>
+            </ol>-->
+        </div>
+    </div>
+</section>
+<section class="contact_area section_gap" style="font-size:17px !important">
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12" >
+                    <div class="form-group row">
+                        <label for="imgUpload" class="col-md-4 col-form-label">फोटो अपलोड करें </label>
+                        <div class="col-sm-8">
+
+                            <input type="file" class="form-control" id="imgUpload">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtFullName" class="col-md-4 col-form-label">पूरा नाम</label>
+                        <div class="col-sm-8">
+                            @Html.DisplayFor(x => x.FullName, new { @class = "form-control" })
+                            @*<input type="text" class="form-control" id="txtFullName">*@
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtBirthday" class="col-md-4 col-form-label">जन्म तिथि, समय </label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtBirthday">*@
+                            @Html.DisplayFor(x => x.BirthDay, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtBirthPlace" class="col-md-4 col-form-label">जन्म स्थान  </label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtBirthPlace">*@
+                            @Html.DisplayFor(x => x.BirthPlace, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtFather" class="col-md-4 col-form-label">पिता का नाम </label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtFather">*@
+                            @Html.DisplayFor(x => x.FathersName, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtMother" class="col-md-4 col-form-label">माता का नाम </label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtMother">*@
+                            @Html.DisplayFor(x => x.MothersName, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtGotra" class="col-md-4 col-form-label">गोत्र </label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtGotra">*@
+                            @Html.DisplayFor(x => x.Gotra, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtEdu" class="col-md-4 col-form-label">शिक्षा </label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtEdu">*@
+                            @Html.DisplayFor(x => x.Education, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtJob" class="col-md-4 col-form-label">कार्य / व्यवसाय </label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtJob">*@
+                            @Html.DisplayFor(x => x.Profession, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-4 col-form-label">वार्षिक आय  </label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtIncome">*@
+                            @Html.DisplayFor(x => x.AnnualIncome, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-4 col-form-label">वैवाहिक स्थिति - पुनर्विवाह के लिए आवश्यक</label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtMaritalStatus">*@
+                            @Html.DisplayFor(x => x.MaritalStatus, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-4 col-form-label">भाई (वैवाहिक स्थिति सहित)</label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtBrother">*@
+                            @Html.DisplayFor(x => x.BrothersDetails, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-4 col-form-label">बहन (वैवाहिक स्थिति सहित)</label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtSister">*@
+                            @Html.DisplayFor(x => x.SistersDetails, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-4 col-form-label">ब्राम्हण प्रकार</label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtType">*@
+                            @Html.DisplayFor(x => x.BramhinType, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-4 col-form-label">आयु में अंतर</label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtDifference">*@
+                            @Html.DisplayFor(x => x.AgeDifference, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-4 col-form-label">स्वीकार्यता</label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtAgree">*@
+                            @Html.DisplayFor(x => x.Agreement, new { @class = "form-control" })
+                        </div>
+                    </div><div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-4 col-form-label">पालक का संपर्क नंबर</label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtGuardian">*@
+                            @Html.DisplayFor(x => x.GuardiansContact, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-4 col-form-label">पूरा पता </label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtFullName">*@
+                            @Html.DisplayFor(x => x.FullAddress, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-md-2 col-form-label">जानकारी प्रदान करने वाले प्रतिनिधि का नाम व  नंबर </label>
+                        <div class="col-sm-8">
+                            @*<input type="text" class="form-control" id="txtInfo">*@
+                            @Html.DisplayFor(x => x.InformantDetails, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+  
+    </div>
+</section>
+

@@ -1,4 +1,9 @@
 ﻿@using Microsoft.AspNet.Identity
+<style>
+    .nav navbar-nav navbar-right{
+        font-size:14px !important;
+    }
+</style>
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -6,10 +11,12 @@
     @Html.AntiForgeryToken()
 
     <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+        <li style="font-size:14px !important;padding-right:4px !important;padding-left:50px !important">
+            @Html.ActionLink("नमस्कार!   ", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        <li style="font-size:14px !important;padding-right:12px !important;padding-left:12px !important"><a href="javascript:document.getElementById('logoutForm').submit()">
+    लोग आउट
+</a></li>
     </ul>
     }
 }

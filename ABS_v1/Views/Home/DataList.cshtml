@@ -1,0 +1,48 @@
+﻿@model ABS_v1.Models.FormData
+@{
+    ViewBag.Title = "DataList";
+}
+<link href="https://fonts.googleapis.com/css?family=Sumana&display=swap" rel="stylesheet">
+@*<link href="~/css/table.css" rel="stylesheet" />*@
+<h2>आवेदकों की सूची</h2>
+<section class="contact_area section_gap">
+    <div class="container">
+        <div class="table-responsive-vertical shadow-z-1">
+            <table id="table" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th data-title="SrNo">क्र.</th>
+                        <th data-title="FullName">पूरा नाम</th>
+                        <th>जन्म तिथि, समय</th>
+                        <th>जन्म स्थान </th>
+                        <th>पिता का नाम</th>
+                        <th>माता का नाम</th>
+                        <th>गोत्र</th>
+                        <th></th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @*@foreach (var item in Model.DataList)*@
+                    @for(int i = 0; i < Model.DataList.Count; i++)
+                    {
+                        <tr>
+                            <td>@(i+1)</td>
+                            <td>@Model.DataList[i].FullName</td>
+                            <td>@Model.DataList[i].BirthDay</td>
+                            <td>@Model.DataList[i].BirthPlace</td>
+                            <td>@Model.DataList[i].FathersName</td>
+                            <td>@Model.DataList[i].MothersName</td>
+                            <td>@Model.DataList[i].Gotra</td>      
+                            <td>
+                                <a href="@Url.Action("FormDetails", new { id = @Model.DataList[i].Id })">विस्तृत जानकारी</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        </div>
+</section>
+
+

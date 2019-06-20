@@ -1,39 +1,43 @@
 ﻿@model ABS_v1.Models.RegisterViewModel
 @{
     ViewBag.Title = "Register";
+    Layout = null;
 }
 
-<h2>@ViewBag.Title.</h2>
+<link href="~/css/login.css" rel="stylesheet" />
+<h3 style="text-align:center;padding-top:2%">छत्तीसगढ़ प्रांतीय अखंड ब्राम्हण समाज</h3>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
+<div class="wrapper fadeInDown">
     @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <a href=" @Url.Action("Login")">
+            <h2 class="inactive underlineHover"> Sign In </h2>
+        </a>
+        <a href=" @Url.Action("Register")"><h2 class="active">Sign Up </h2></a>
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="~/image/Logo.jpg" width="100" height="100" alt="User Icon" />
         </div>
+
+
+        @Html.TextBoxFor(m => m.Email, new { @class = "fadeIn second", @name = "login", @placeholder = "login" })
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control fadeIn third", @name = "login", @placeholder = "password", })
+        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control fadeIn third", @name = "login", @placeholder = "password", })
+        @*<input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">*@
+        <input type="submit" class="fadeIn fourth" value="Register">
+
+
+
+
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
+</div>
+
 }
 
 @section Scripts {

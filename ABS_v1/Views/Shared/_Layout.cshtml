@@ -22,29 +22,29 @@
     <!--================Header Area =================-->
     <header class="header_area">
         @*<div class="header_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-5">
-                        <ul class="nav social_icon">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 col-7">
-                        <div class="top_btn d-flex justify-content-end">
-                            <a href="#">My Account</a>
-                            <a href="#">Donate Now</a>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-5">
+                            <ul class="nav social_icon">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-7">
+                            <div class="top_btn d-flex justify-content-end">
+                                <a href="#">My Account</a>
+                                <a href="#">Donate Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>*@
+            </div>*@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="index.html"><img src="image/parshuram.png" height="30" width="86" alt=""></a>
+                <a class="navbar-brand logo_h" href="@Url.Action("Index", "Home")"><img src="image/logo.jpg" style="max-height:91px; max-width:91px" alt=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -56,36 +56,43 @@
                         <li class="nav-item active"><a class="nav-link" href="@Url.Action("Index", "Home")">मुख्य पृष्ठ</a></li>
                         <!--<li class="nav-item"><a class="nav-link" href="ministries.html">Minisrtries</a></li>-->
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("About", "Home")">समाचार </a></li>
-                        <li class="nav-item submenu dropdown">
-                            <a href="@Url.Action("Events", "Home")" class="nav-link" >आयोजन</a>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Events", "Home")" class="nav-link">आयोजन</a>
                             <!--<ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="event.html">आयोजन </a></li>
-                                <li class="nav-item"><a class="nav-link" href="event-details.html">गैलरी</a></li>
-                            </ul>-->
+            <li class="nav-item"><a class="nav-link" href="event.html">आयोजन </a></li>
+            <li class="nav-item"><a class="nav-link" href="event-details.html">गैलरी</a></li>
+        </ul>-->
                         </li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Members", "Home")">पदाधिकारी</a></li>
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Gallery", "Home")">गैलरी</a></li>
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Contact", "Home")">संपर्क</a></li>
+                        @if (Request.IsAuthenticated)
+                        { 
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("DataList", "Home")">आवेदकों की सूची</a></li>}
                         <!--<li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
-                                <li class="nav-item"><a class="nav-link" href="donation.html">Donation</a></li>
-                                <li class="nav-item"><a class="nav-link" href="gallery.html">गैलरी</a></li>
-                                <li class="nav-item"><a class="nav-link" href="elements.html">संपर्क</a></li>
-                            </ul>
-                        </li>-->
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+        <ul class="dropdown-menu">
+            <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="donation.html">Donation</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">गैलरी</a></li>
+            <li class="nav-item"><a class="nav-link" href="elements.html">संपर्क</a></li>
+        </ul>
+    </li>-->
                         <!--<li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>
-                            </ul>
-                        </li>-->
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+        <ul class="dropdown-menu">
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>
+        </ul>
+    </li>-->
                         <!--<li class="nav-item"><a class="nav-link" href="contact.html">संपर्क</a></li>-->
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item"><a href="#" class="search"><i class="lnr lnr-magnifier"></i></a></li>
                     </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        @Html.Partial("_LoginPartial")
+                        </ul>
                 </div>
             </div>
         </nav>
@@ -188,5 +195,6 @@
     @*<script src="/vendors/flipclock/timer.js"></script>*@
     <script src="/vendors/nice-select/js/jquery.nice-select.min.js"></script>
     <script src="/js/custom.js"></script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>
