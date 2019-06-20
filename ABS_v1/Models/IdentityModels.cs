@@ -3,6 +3,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using MySql.Data;
+using MySql.Data.EntityFramework;
 
 namespace ABS_v1.Models
 {
@@ -18,12 +20,15 @@ namespace ABS_v1.Models
         }
     }
 
+    [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public virtual IDbSet<FormData> FormData { get; set; }
 
         public static ApplicationDbContext Create()
         {
