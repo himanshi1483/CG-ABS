@@ -295,6 +295,17 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\login.css" />
+    <Content Include="css\members\bootstrap.min.css" />
+    <Content Include="css\members\bootstrap.min.js" />
+    <Content Include="css\members\custom.js" />
+    <Content Include="css\members\font-awesome.css" />
+    <Content Include="css\members\fonts.css" />
+    <Content Include="css\members\jquery-1.12.3.min.js" />
+    <Content Include="css\members\normalize.css" />
+    <Content Include="css\members\particleElement.js" />
+    <Content Include="css\members\particles.js" />
+    <Content Include="css\members\responsive.css" />
+    <Content Include="css\members\style.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\style.css" />
     <Content Include="css\table.css" />
@@ -336,6 +347,12 @@
     <Content Include="image\blog\post4.jpg" />
     <Content Include="image\blog\prev.jpg" />
     <Content Include="image\blog\s-img.jpg" />
+    <Content Include="image\cover1.jpg" />
+    <Content Include="image\cover2.jpg" />
+    <Content Include="image\cover3.jpg" />
+    <Content Include="image\cover4.jpg" />
+    <Content Include="image\cover5.jpg" />
+    <Content Include="image\cover6.jpg" />
     <Content Include="image\donate.jpg" />
     <Content Include="image\elements\a.jpg" />
     <Content Include="image\elements\a2.jpg" />
@@ -372,6 +389,7 @@
     <Content Include="image\gallery\04.jpg" />
     <Content Include="image\gallery\05.jpg" />
     <Content Include="image\gallery\06.jpg" />
+    <Content Include="image\Ganga.png" />
     <Content Include="image\instagram\Image-01.jpg" />
     <Content Include="image\instagram\Image-02.jpg" />
     <Content Include="image\instagram\Image-03.jpg" />
@@ -380,6 +398,8 @@
     <Content Include="image\instagram\Image-06.jpg" />
     <Content Include="image\instagram\Image-07.jpg" />
     <Content Include="image\instagram\Image-08.jpg" />
+    <Content Include="image\Jagannathi.jpg" />
+    <Content Include="image\logo.jpg" />
     <Content Include="image\Logo.png" />
     <Content Include="image\parshuram.png" />
     <Content Include="image\sermns.jpg" />
@@ -470,6 +490,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\style.css.map" />
+    <Content Include="css\members\style.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -519,6 +540,7 @@
     <Content Include="Views\Home\Registration.cshtml" />
     <Content Include="Views\Home\DataList.cshtml" />
     <Content Include="Views\Home\FormDetails.cshtml" />
+    <Content Include="Views\Home\Members.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
