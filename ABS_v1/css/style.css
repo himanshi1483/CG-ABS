@@ -356,7 +356,7 @@ button:focus {
 }
 
 .header_area + section {
-  margin-top: 91px;
+  margin-top: 91px !important;
 }
 
 .header_area.navbar_fixed {
@@ -829,6 +829,7 @@ h3 {
   background: #04091e;
   z-index: 1;
   overflow: hidden;
+  margin-top:91px;
 }
 
 .br_image {

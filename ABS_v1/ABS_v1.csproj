@@ -213,6 +213,18 @@
     <Compile Include="Migrations\201906201141459_init31.Designer.cs">
       <DependentUpon>201906201141459_init31.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906210640528_init4.cs" />
+    <Compile Include="Migrations\201906210640528_init4.Designer.cs">
+      <DependentUpon>201906210640528_init4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906210649023_init5.cs" />
+    <Compile Include="Migrations\201906210649023_init5.Designer.cs">
+      <DependentUpon>201906210649023_init5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906210704495_init6.cs" />
+    <Compile Include="Migrations\201906210704495_init6.Designer.cs">
+      <DependentUpon>201906210704495_init6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -317,36 +329,6 @@
     <Content Include="image\blog1.jpg" />
     <Content Include="image\blog2.jpg" />
     <Content Include="image\blog3.jpg" />
-    <Content Include="image\blog\add.jpg" />
-    <Content Include="image\blog\author.png" />
-    <Content Include="image\blog\banner-2.jpg" />
-    <Content Include="image\blog\blog-1.jpg" />
-    <Content Include="image\blog\blog-2.jpg" />
-    <Content Include="image\blog\blog-3.jpg" />
-    <Content Include="image\blog\c1.jpg" />
-    <Content Include="image\blog\c2.jpg" />
-    <Content Include="image\blog\c3.jpg" />
-    <Content Include="image\blog\c4.jpg" />
-    <Content Include="image\blog\c5.jpg" />
-    <Content Include="image\blog\c6.jpg" />
-    <Content Include="image\blog\cat-post\cat-post-1.jpg" />
-    <Content Include="image\blog\cat-post\cat-post-2.jpg" />
-    <Content Include="image\blog\cat-post\cat-post-3.jpg" />
-    <Content Include="image\blog\feature-img1.jpg" />
-    <Content Include="image\blog\main-blog\m-blog-1.jpg" />
-    <Content Include="image\blog\main-blog\m-blog-2.jpg" />
-    <Content Include="image\blog\main-blog\m-blog-3.jpg" />
-    <Content Include="image\blog\main-blog\m-blog-4.jpg" />
-    <Content Include="image\blog\main-blog\m-blog-5.jpg" />
-    <Content Include="image\blog\next.jpg" />
-    <Content Include="image\blog\post-img1.jpg" />
-    <Content Include="image\blog\post-img2.jpg" />
-    <Content Include="image\blog\post1.jpg" />
-    <Content Include="image\blog\post2.jpg" />
-    <Content Include="image\blog\post3.jpg" />
-    <Content Include="image\blog\post4.jpg" />
-    <Content Include="image\blog\prev.jpg" />
-    <Content Include="image\blog\s-img.jpg" />
     <Content Include="image\cover1.jpg" />
     <Content Include="image\cover2.jpg" />
     <Content Include="image\cover3.jpg" />
@@ -354,33 +336,6 @@
     <Content Include="image\cover5.jpg" />
     <Content Include="image\cover6.jpg" />
     <Content Include="image\donate.jpg" />
-    <Content Include="image\elements\a.jpg" />
-    <Content Include="image\elements\a2.jpg" />
-    <Content Include="image\elements\d.jpg" />
-    <Content Include="image\elements\disabled-check.png" />
-    <Content Include="image\elements\disabled-radio.png" />
-    <Content Include="image\elements\f1.jpg" />
-    <Content Include="image\elements\f2.jpg" />
-    <Content Include="image\elements\f3.jpg" />
-    <Content Include="image\elements\f4.jpg" />
-    <Content Include="image\elements\f5.jpg" />
-    <Content Include="image\elements\f6.jpg" />
-    <Content Include="image\elements\f7.jpg" />
-    <Content Include="image\elements\f8.jpg" />
-    <Content Include="image\elements\g1.jpg" />
-    <Content Include="image\elements\g2.jpg" />
-    <Content Include="image\elements\g3.jpg" />
-    <Content Include="image\elements\g4.jpg" />
-    <Content Include="image\elements\g5.jpg" />
-    <Content Include="image\elements\g6.jpg" />
-    <Content Include="image\elements\g7.jpg" />
-    <Content Include="image\elements\g8.jpg" />
-    <Content Include="image\elements\primary-check.png" />
-    <Content Include="image\elements\primary-radio.png" />
-    <Content Include="image\elements\success-check.png" />
-    <Content Include="image\elements\success-radio.png" />
-    <Content Include="image\elements\user1.png" />
-    <Content Include="image\elements\user2.png" />
     <Content Include="image\event.jpg" />
     <Content Include="image\favicon.png" />
     <Content Include="image\gallery\01.jpg" />
@@ -390,17 +345,22 @@
     <Content Include="image\gallery\05.jpg" />
     <Content Include="image\gallery\06.jpg" />
     <Content Include="image\Ganga.png" />
-    <Content Include="image\instagram\Image-01.jpg" />
-    <Content Include="image\instagram\Image-02.jpg" />
-    <Content Include="image\instagram\Image-03.jpg" />
-    <Content Include="image\instagram\Image-04.jpg" />
-    <Content Include="image\instagram\Image-05.jpg" />
-    <Content Include="image\instagram\Image-06.jpg" />
-    <Content Include="image\instagram\Image-07.jpg" />
-    <Content Include="image\instagram\Image-08.jpg" />
     <Content Include="image\Jagannathi.jpg" />
     <Content Include="image\logo.jpg" />
     <Content Include="image\Logo.png" />
+    <Content Include="image\members\bhartisharma.jpeg" />
+    <Content Include="image\members\chitratiwari.jpeg" />
+    <Content Include="image\members\meghrajtiwari.jpeg" />
+    <Content Include="image\members\mukeshdev.jpeg" />
+    <Content Include="image\members\nishatiwari.jpeg" />
+    <Content Include="image\members\pritishukla.jpeg" />
+    <Content Include="image\members\sanjayshukla.jpeg" />
+    <Content Include="image\members\saritadubey.jpeg" />
+    <Content Include="image\members\saritasharma.jpeg" />
+    <Content Include="image\members\shailendra.jpeg" />
+    <Content Include="image\members\sunitamishra.jpeg" />
+    <Content Include="image\members\yogeshtiwari.jpeg" />
+    <Content Include="image\members\yogeshtiwari2.jpeg" />
     <Content Include="image\parshuram.png" />
     <Content Include="image\sermns.jpg" />
     <Content Include="image\team1.jpg" />
@@ -461,7 +421,6 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
-    <Content Include="image\elements\_DS_Store" />
     <Content Include="scss\style.scss" />
     <Content Include="scss\_banner.scss" />
     <Content Include="scss\_blog.scss" />
@@ -541,9 +500,11 @@
     <Content Include="Views\Home\DataList.cshtml" />
     <Content Include="Views\Home\FormDetails.cshtml" />
     <Content Include="Views\Home\Members.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="image\registration\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -570,6 +531,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906201141459_init31.resx">
       <DependentUpon>201906201141459_init31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906210640528_init4.resx">
+      <DependentUpon>201906210640528_init4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906210649023_init5.resx">
+      <DependentUpon>201906210649023_init5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906210704495_init6.resx">
+      <DependentUpon>201906210704495_init6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -31,7 +31,7 @@ namespace ABS_v1.Models
         public string GuardiansContact { get; set; }
         public string FullAddress { get; set; }
         public string InformantDetails { get; set; }
-        public byte Image { get; set; }
+        public string ImageName { get; set; }
         public DateTime RegDate { get; set; }
 
         public string RegPlace { get; set; }
