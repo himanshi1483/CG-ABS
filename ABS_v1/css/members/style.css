@@ -1,0 +1,80 @@
+
+
+.ourTeamWrap {
+  margin-top: 30px; }
+
+.teamMembBLock {
+  text-align: center;
+  margin-bottom: 30px;
+  background: #f8f8f8;
+  border: 1px solid #eee; }
+  .teamMembBLock .imgBlock {
+    position: relative; }
+    .teamMembBLock .imgBlock img {
+      margin: 0 auto; }
+  .teamMembBLock .textBlock {
+    padding-bottom: 10px; }
+    .teamMembBLock .textBlock .name {
+      font-family: 'open_sansbold';
+      font-size: 16px;
+      color: #282828;
+      text-transform: uppercase;
+      position: relative;
+      margin-top: 20px; }
+      .teamMembBLock .textBlock .name:after {
+        content: '';
+        width: 80px;
+        height: 2px;
+        background: #63bc46;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        margin: 0 auto; }
+    .teamMembBLock .textBlock .jobTitle {
+      font-family: 'open_sanssemibold';
+      font-size: 13px;
+      color: #282828;
+      margin-top: 16px; }
+  .teamMembBLock .socialOverly {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background: url(../images/teamOverly.png) top left repeat;
+    padding-top: 70px;
+    display: block;
+    opacity: 0; }
+    .teamMembBLock .socialOverly p {
+      font-size: 13px;
+      color: #ffffff;
+      width: 65%;
+      margin: 0 auto;
+      position: relative; }
+      .teamMembBLock .socialOverly p:after {
+        content: '';
+        width: 50px;
+        height: 2px;
+        background: #63bc46;
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        right: 0;
+        margin: 0 auto; }
+    .teamMembBLock .socialOverly .socialList {
+      text-align: center;
+      padding: 0;
+      margin-top: 37px; }
+      .teamMembBLock .socialOverly .socialList li {
+        display: inline-block;
+        margin: 0 20px; }
+  .teamMembBLock:hover .socialOverly {
+    display: block;
+    opacity: 1;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }

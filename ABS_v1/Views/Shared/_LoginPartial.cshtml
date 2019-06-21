@@ -12,7 +12,7 @@
 
     <ul class="nav navbar-nav navbar-right">
         <li style="font-size:14px !important;padding-right:4px !important;padding-left:50px !important">
-            @Html.ActionLink("नमस्कार!   ", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            @Html.ActionLink("नमस्कार!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
         <li style="font-size:14px !important;padding-right:12px !important;padding-left:12px !important"><a href="javascript:document.getElementById('logoutForm').submit()">
     लोग आउट
@@ -23,7 +23,7 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
+        <li style="font-size:14px !important;padding-right:4px !important;padding-left:50px !important">@Html.ActionLink("लोग इन", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
 }

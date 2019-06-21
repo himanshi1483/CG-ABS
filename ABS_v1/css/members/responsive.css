@@ -1,0 +1,62 @@
+@media only screen and (max-width : 320px) {
+    .footNav>li{padding-right: 0;}
+}
+
+@media only screen and (max-width : 480px) {
+    .navbar-brand{max-width: 76%;}
+    
+    .carousel-caption .btn-slide,
+    .carousel-caption .btn-slide:hover,
+    .carousel-caption .btn-slide:focus{
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .carousel.slide .carousel-caption h1,
+    .carousel.slide .carousel-caption h2{display: none;}
+    .servicesBlock .servicesRow .servicesBox .overlyBLock {padding: 20px;}
+    .productsection .textBlock {margin-top: 0px;}
+    .servicesBlock .servicesRow .servicesBox{
+        border-bottom: 2px solid rgb(204, 204, 204);
+        border-right: none;
+        width: 100%;
+    }
+    .servicesBlock .servicesRow {border-bottom: none;}
+    body{padding-bottom: 130px;}
+    .requirementWrap h6.blank{display: none;}
+    .contactForm .requirementWrap .servicesOption{border-right: none;}
+    
+}
+@media only screen and (max-width : 980px) {
+    .bottomSection .magicImg img{float: left;}
+    .testimonialSec .testimonialBlock{margin-bottom: 20px;}
+}
+@media only screen and (min-width : 768px) and (max-width : 1300px) {
+    .carousel-inner>.item{padding-bottom: 30px;}
+    .carousel.slide .carousel-caption h1{font-size: 30px; margin-bottom: 0;}
+    .carousel.slide .carousel-caption h1 span{line-height: 30px; font-size: 12px;}
+    .carousel.slide .carousel-caption h2{font-size: 26px;}
+    .navbar-nav>li>a{
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    
+}
+@media only screen and (max-width : 1024px) {
+    .carousel-inner>.item{padding-bottom: 50px;}
+    .carousel.slide .carousel-caption h1{font-size: 30px; margin-bottom: 0;}
+    .carousel.slide .carousel-caption h1 span{line-height: 30px; font-size: 12px;}
+    .carousel.slide .carousel-caption h2{font-size: 26px;}
+    .footer{height: auto;}
+    .magicDetail{margin-bottom: 20px;}
+    .bottomSection #carouselMagicSec .carousel-control.right,
+    .bottomSection #carouselMagicSec .carousel-control.left{
+        top: -40px;
+    }
+}
+
+
+@media only screen and (min-width : 1025px) and (max-width : 1400px) {
+}

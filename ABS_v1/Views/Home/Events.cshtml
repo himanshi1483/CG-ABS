@@ -15,7 +15,9 @@
     </div>
 </section>
 <!--================Breadcrumb Area =================-->
+<section class="section_gap"></section>
 <!--================Event Date Area =================-->
+
 <section class="event_date_area">
     <div class="container">
         <div class="row">
@@ -23,12 +25,12 @@
                 <div class="evet_location flex">
                     <h3>प्रदेश स्तरीय संपूर्ण ब्राम्हण युवक-युवती एवं पुनर्विवाह परिचय सम्मलेन </h3>
                     <p><span class="lnr lnr-calendar-full"></span>16th दिसंबर, 2019</p>
-                    <p><span class="lnr lnr-clock"></span>रविवार, 09.00 am to 05.00 pm</p>
+                    @*<p><span class="lnr lnr-clock"></span>रविवार, 09.00 am to 05.00 pm</p>*@
                 </div>
             </div>
             <div class="col-md-6 event_time">
                 <h4>रजिस्ट्रेशन के लिए यहाँ क्लिक करें </h4>
-                <a class="btn" href="@Url.Action("Registration")">रजिस्टर</a>
+                <a class="btn btn-primary" href="@Url.Action("Registration")">रजिस्टर</a>
                
             </div>
         </div>
@@ -56,11 +58,39 @@
             <div class="col-lg-4 col-sm-6">
                 <div class="event_post">
                     <img src="~/image/blog1.jpg" alt="">
+                    <a href="event-details.html"><h2 class="event_title">युवक युवती परिचय सम्मेलन</h2></a>
+                    <ul class="list_style sermons_category event_category">
+                        <li><i class="lnr lnr-user"></i>जुलाई, 2016</li>
+                        <li><i class="lnr lnr-apartment"></i> रायपुर छत्तीसगढ़ </li>
+                        <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA*@</li>
+                    </ul>
+                    <a href="#" class="btn_hover">
+                        विस्तृत जानकारी
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="event_post">
+                    <img src="~/image/blog1.jpg" alt="">
+                    <a href="event-details.html"><h2 class="event_title">व्रतबन्ध संस्कार</h2></a>
+                    <ul class="list_style sermons_category event_category">
+                        <li><i class="lnr lnr-user"></i>2018</li>
+                        <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
+                        <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA*@</li>
+                    </ul>
+                    <a href="#" class="btn_hover">
+                        विस्तृत जानकारी
+                    </a>
+                </div>
+            </div>
+            @*<div class="col-lg-4 col-sm-6">
+                <div class="event_post">
+                    <img src="~/image/blog1.jpg" alt="">
                     <a href="event-details.html"><h2 class="event_title">शैक्षणिक सम्मान समारोह</h2></a>
                     <ul class="list_style sermons_category event_category">
                         <li><i class="lnr lnr-user"></i>शनिवार, 5th may, 2018</li>
                         <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
-                        <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA*@</li>
+                        <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA</li>
                     </ul>
                     <a href="#" class="btn_hover">
                         विस्तृत जानकारी
@@ -74,7 +104,7 @@
                     <ul class="list_style sermons_category event_category">
                         <li><i class="lnr lnr-user"></i>शनिवार, 5th may, 2018</li>
                         <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
-                        <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA*@</li>
+                        <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA</li>
                     </ul>
                     <a href="#" class="btn_hover">
                         विस्तृत जानकारी
@@ -88,35 +118,7 @@
                     <ul class="list_style sermons_category event_category">
                         <li><i class="lnr lnr-user"></i>शनिवार, 5th may, 2018</li>
                         <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
-                        <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA*@</li>
-                    </ul>
-                    <a href="#" class="btn_hover">
-                        विस्तृत जानकारी
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="event_post">
-                    <img src="~/image/blog1.jpg" alt="">
-                    <a href="event-details.html"><h2 class="event_title">शैक्षणिक सम्मान समारोह</h2></a>
-                    <ul class="list_style sermons_category event_category">
-                        <li><i class="lnr lnr-user"></i>शनिवार, 5th may, 2018</li>
-                        <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
-                        <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA*@</li>
-                    </ul>
-                    <a href="#" class="btn_hover">
-                        विस्तृत जानकारी
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="event_post">
-                    <img src="~/image/blog1.jpg" alt="">
-                    <a href="event-details.html"><h2 class="event_title">शैक्षणिक सम्मान समारोह</h2></a>
-                    <ul class="list_style sermons_category event_category">
-                        <li><i class="lnr lnr-user"></i>शनिवार, 5th may, 2018</li>
-                        <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
-                        <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA*@</li>
+                        <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA</li>
                     </ul>
                     <a href="#" class="btn_hover">
                         विस्तृत जानकारी
@@ -130,13 +132,13 @@
                     <ul class="list_style sermons_category event_category">
                         <li><i class="lnr lnr-user"></i>शनिवार, 5th may, 2018</li>
                         <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
-                        <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA*@</li>
+                        <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA</li>
                     </ul>
                     <a href="#" class="btn_hover">
                         विस्तृत जानकारी
                     </a>
                 </div>
-            </div>
+            </div>*@
         </div>
     </div>
 </section>

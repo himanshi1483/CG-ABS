@@ -74,5 +74,13 @@ namespace ABS_v1.Controllers
             model = data;
             return View(model);
         }
+
+        public ActionResult Members()
+        {
+           
+            return View();
+        }
+
+
     }
 }
