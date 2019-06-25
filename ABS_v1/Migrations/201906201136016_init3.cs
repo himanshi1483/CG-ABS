@@ -7,12 +7,12 @@ namespace ABS_v1.Migrations
     {
         public override void Up()
         {
-            RenameTable(name: "dbo.RegistrationModels", newName: "FormData");
+           // RenameTable(name: "dbo.RegistrationModels", newName: "FormData");
         }
         
         public override void Down()
         {
-            RenameTable(name: "dbo.FormData", newName: "RegistrationModels");
+           // RenameTable(name: "dbo.FormData", newName: "RegistrationModels");
         }
     }
 }

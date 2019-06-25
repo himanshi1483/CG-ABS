@@ -254,6 +254,7 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="css\fluid-gallery.css" />
     <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\gallery-grid.css" />
     <Content Include="css\login.css" />
     <Content Include="css\members\bootstrap.min.css" />
     <Content Include="css\members\bootstrap.min.js" />
@@ -308,6 +309,7 @@
     <Content Include="image\gallery\gallery8.jpeg" />
     <Content Include="image\gallery\gallery9.jpeg" />
     <Content Include="image\Ganga.png" />
+    <Content Include="image\homepage.jpeg" />
     <Content Include="image\Jagannathi.jpg" />
     <Content Include="image\logo.jpg" />
     <Content Include="image\Logo.png" />
@@ -324,8 +326,13 @@
     <Content Include="image\members\sunitamishra.jpeg" />
     <Content Include="image\members\yogeshtiwari.jpeg" />
     <Content Include="image\members\yogeshtiwari2.jpeg" />
+    <Content Include="image\NEWS1.jpg" />
+    <Content Include="image\news2.jpg" />
     <Content Include="image\parshuram.png" />
     <Content Include="image\sermns.jpg" />
+    <Content Include="image\slider1.jpeg" />
+    <Content Include="image\slider2.jpeg" />
+    <Content Include="image\slider3.jpeg" />
     <Content Include="image\team1.jpg" />
     <Content Include="image\team2.jpg" />
     <Content Include="image\team3.jpg" />
@@ -404,6 +411,7 @@
     <Content Include="Content\style.css.map" /-->
     <Content Include="css\members\style.css.map" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
