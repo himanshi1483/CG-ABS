@@ -29,6 +29,7 @@ namespace ABS_v1.Models
         }
 
         public virtual IDbSet<FormData> FormData { get; set; }
+        public virtual IDbSet<PaymentModel> PaymentData { get; set; }
         public virtual IDbSet<ContactModel> ContactData { get; set; }
         public static ApplicationDbContext Create()
         {

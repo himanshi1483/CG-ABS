@@ -34,7 +34,7 @@
                     <div class="form-group row">
                         <label for="txtFullName" class="col-md-2 col-form-label">पूरा नाम</label>
                         <div class="col-sm-10">
-                            @Html.TextBoxFor(x => x.FullName, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.FullName, new { @class = "form-control", @required = "required" })
                             @*<input type="text" class="form-control" id="txtFullName">*@
                         </div>
                     </div>
@@ -42,118 +42,118 @@
                         <label for="txtBirthday" class="col-md-2 col-form-label">जन्म तिथि, समय </label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtBirthday">*@
-                            @Html.TextBoxFor(x => x.BirthDay, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.BirthDay, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="txtBirthPlace" class="col-md-2 col-form-label">जन्म स्थान  </label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtBirthPlace">*@
-                            @Html.TextBoxFor(x => x.BirthPlace, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.BirthPlace, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="txtFather" class="col-md-2 col-form-label">पिता का नाम </label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtFather">*@
-                            @Html.TextBoxFor(x => x.FathersName, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.FathersName, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="txtMother" class="col-md-2 col-form-label">माता का नाम </label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtMother">*@
-                            @Html.TextBoxFor(x => x.MothersName, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.MothersName, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="txtGotra" class="col-md-2 col-form-label">गोत्र </label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtGotra">*@
-                            @Html.TextBoxFor(x => x.Gotra, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.Gotra, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="txtEdu" class="col-md-2 col-form-label">शिक्षा </label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtEdu">*@
-                            @Html.TextBoxFor(x => x.Education, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.Education, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="txtJob" class="col-md-2 col-form-label">कार्य / व्यवसाय </label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtJob">*@
-                            @Html.TextBoxFor(x => x.Profession, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.Profession, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="exampleFormControlInput1" class="col-md-2 col-form-label">वार्षिक आय  </label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtIncome">*@
-                            @Html.TextBoxFor(x => x.AnnualIncome, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.AnnualIncome, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="exampleFormControlInput1" class="col-md-2 col-form-label">वैवाहिक स्थिति - पुनर्विवाह के लिए आवश्यक</label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtMaritalStatus">*@
-                            @Html.TextBoxFor(x => x.MaritalStatus, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.MaritalStatus, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="exampleFormControlInput1" class="col-md-2 col-form-label">भाई (वैवाहिक स्थिति सहित)</label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtBrother">*@
-                            @Html.TextBoxFor(x => x.BrothersDetails, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.BrothersDetails, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="exampleFormControlInput1" class="col-md-2 col-form-label">बहन (वैवाहिक स्थिति सहित)</label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtSister">*@
-                            @Html.TextBoxFor(x => x.SistersDetails, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.SistersDetails, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="exampleFormControlInput1" class="col-md-2 col-form-label">ब्राम्हण प्रकार</label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtType">*@
-                            @Html.TextBoxFor(x => x.BramhinType, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.BramhinType, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="exampleFormControlInput1" class="col-md-2 col-form-label">आयु में अंतर</label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtDifference">*@
-                            @Html.TextBoxFor(x => x.AgeDifference, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.AgeDifference, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="exampleFormControlInput1" class="col-md-2 col-form-label">स्वीकार्यता</label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtAgree">*@
-                            @Html.TextBoxFor(x => x.Agreement, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.Agreement, new { @class = "form-control", @required = "required" })
                         </div>
                     </div><div class="form-group row">
                         <label for="exampleFormControlInput1" class="col-md-2 col-form-label">पालक का संपर्क नंबर</label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtGuardian">*@
-                            @Html.TextBoxFor(x => x.GuardiansContact, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.GuardiansContact, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="exampleFormControlInput1" class="col-md-2 col-form-label">पूरा पता </label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtFullName">*@
-                            @Html.TextBoxFor(x => x.FullAddress, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.FullAddress, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="exampleFormControlInput1" class="col-md-2 col-form-label">जानकारी प्रदान करने वाले प्रतिनिधि का नाम व  नंबर </label>
                         <div class="col-sm-10">
                             @*<input type="text" class="form-control" id="txtInfo">*@
-                            @Html.TextBoxFor(x => x.InformantDetails, new { @class = "form-control" })
+                            @Html.TextBoxFor(x => x.InformantDetails, new { @class = "form-control", @required = "required" })
                         </div>
                     </div>
 
@@ -164,14 +164,17 @@
                 </div>
             </div>
             <div style="text-align:center">
-                <button onclick="onButtonClick()">
+                @*<a href="@Url.Action("Payment")">Pay</a>*@
+                @*<button onclick="onButtonClick()" data-behaviour="remote" data-style="light" data-text="Checkout With Instamojo">
                     Click here to pay the registration fees
-                </button>
+                </button>*@
+                @*<a href="onButtonClick()" rel="im-checkout" data-behaviour="remote" data-style="light" data-text="Checkout With Instamojo"></a>*@
+
             </div>
             <br />
             <br />
             <div style="text-align:center">
-                <button id="btnSubmit" disabled="disabled" type="submit">Save Details</button>
+                <button id="btnSubmit" class="btn btn-success" type="submit">Proceed to Pay</button>
             </div>
         }
 
@@ -179,17 +182,16 @@
 
     </div>
 </section>
-
-<script src="https://js.instamojo.com/v1/checkout.js"></script>
+@*<script src="https://js.instamojo.com/v1/checkout.js"></script>
 <script>
     /* Start client-defined Callback Handler Functions */
-    //function onOpenHandler() {
-    //    alert('Payments Modal is Opened');
-    //}
+    function onOpenHandler() {
+        alert('Payments Modal is Opened');
+    }
 
-    //function onCloseHandler() {
-    //    alert('Payments Modal is Closed');
-    //}
+    function onCloseHandler() {
+        alert('Payments Modal is Closed');
+    }
 
     function onPaymentSuccessHandler(response) {
         alert('Payment Success');
@@ -214,6 +216,6 @@
     });
 
     function onButtonClick() {
-        Instamojo.open('https://www.instamojo.com/@@cg_abs');
+        Instamojo.open("https://www.instamojo.com/@@cg_abs?checkout=remote&iframe=1&embed=form");
     }
-</script>
+</script>*@

@@ -1,10 +1,10 @@
 ﻿using ABS_v1.Models;
-using InstamojoAPI;
+using Instamojo.NET.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -16,10 +16,10 @@ namespace ABS_v1.Controllers
         //System.Net.Mime.MediaTypeNames.Application.EnableVisualStyles();
         //Application.SetCompatibleTextRenderingDefault(false);
 
-            string Insta_client_id = "tmLkZZ0zV41nJwhayBGBOI4m4I7bH55qpUBdEXGS",
-                   Insta_client_secret = "IDejdccGqKaFlGav9bntKULvMZ0g7twVFolC9gdrh9peMS0megSFr7iDpWwWIDgFUc3W5SlX99fKnhxsoy6ipdAv9JeQwebmOU6VRvOEQnNMWwZnWglYmDGrfgKRheXs",
-                   Insta_Endpoint = InstamojoConstants.INSTAMOJO_API_ENDPOINT,
-                   Insta_Auth_Endpoint = InstamojoConstants.INSTAMOJO_AUTH_ENDPOINT;
+        string Insta_client_id = "DmOuuhRS4LS8S3LhbX9n2EjW7shaKt0QpT7FciN4",
+               Insta_client_secret = "WY65xDAVaVMQhYWykNs23eL2Qc24UejH2DgKJrznNiXJi2MIsmC44xg2U7GVzGWgIxdQYeOgSjPa2hO8xw4jTg0Xhaq4cDDrnvVNcKabICwI3dZTuvLzzhIaXgJ5e1NS",
+               Insta_Endpoint = "https://www.instamojo.com/v2/",//InstamojoConstants.INSTAMOJO_API_ENDPOINT,
+               Insta_Auth_Endpoint = "https://www.instamojo.com/oauth2/token/";//InstamojoConstants.INSTAMOJO_AUTH_ENDPOINT;
         public ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
@@ -61,214 +61,48 @@ namespace ABS_v1.Controllers
         }
 
 
-        public ActionResult Payment()
+        public ActionResult Payment(FormData regData)
         {
-            try
-            {
-                Instamojo objClass = InstamojoImplementation.getApi(Insta_client_id, Insta_client_secret, Insta_Endpoint, Insta_Auth_Endpoint);
+            ViewBag.Message = "Your contact page.";
 
-                #region   1. Create Payment Order
-                //  Create Payment Order
-                PaymentOrder objPaymentRequest = new PaymentOrder();
-                //Required POST parameters
-                objPaymentRequest.name = "ABCD";
-                objPaymentRequest.email = "foo@example.com";
-                objPaymentRequest.phone = "9969156561";
-                objPaymentRequest.amount = 9;
-                objPaymentRequest.currency = "INR";
+            return View("Payment", regData);
 
-                string randomName = Path.GetRandomFileName();
-                randomName = randomName.Replace(".", string.Empty);
-                objPaymentRequest.transaction_id = "test"+ 1121211;
+        }
 
-                objPaymentRequest.redirect_url = "https://swaggerhub.com/api/saich/pay-with-instamojo/1.0.0";
-                //Extra POST parameters 
+        [HttpPost]
+        public async Task<ActionResult> Payment(PaymentModel model, FormData regData)
+        {
 
-                if (objPaymentRequest.validate())
-                {
+            regData.paymentDetails.PaymentStatus = "";
+            regData.paymentDetails.PaymentReqId = "";
+            regData.paymentDetails.RegId = regData.Id;
+            db.PaymentData.Add(regData.paymentDetails);
+            db.SaveChanges();
 
-                    if (objPaymentRequest.nameInvalid)
-                    {
-                       throw new Exception("Name is not valid");
-                    }
+            //Instamojo.NET.Instamojo im = new Instamojo.NET.Instamojo("test_f2b269c4e7c933a88107ebfff76", "test_500c9ec9e355d7e79bf577d050b");
+            
+             Instamojo.NET.Instamojo im = new Instamojo.NET.Instamojo("71ab7fc45edff7f47455a2481aff1373", "dca3a056703e4094486eb686b9ad1f4b");
+            PaymentRequest pr = new PaymentRequest();
+            
+            pr.allow_repeated_payments = false;
+            pr.amount = regData.paymentDetails.Amount.ToString();
+            pr.buyer_name = regData.paymentDetails.PayeeName;
+            pr.email = regData.paymentDetails.Email;
+            pr.phone = regData.paymentDetails.PhoneNumber;
+            pr.send_email = true;
+            pr.send_sms = true;
+            pr.redirect_url = "http://localhost:55347/Home/PaymentStatus?id=" + regData.paymentDetails.Id;
+            //pr.webhook = "https://naveen.me/webhook";
+            pr.purpose = "Registration Fees";
+            PaymentRequest npr = await im.CreatePaymentRequest(pr);
 
-                }
-                else
-                {
-                    try
-                    {
-                        CreatePaymentOrderResponse objPaymentResponse = objClass.createNewPaymentRequest(objPaymentRequest);
-                        Console.Write("Order Id = " + objPaymentResponse.order.id);
-                    }
-                    catch (ArgumentNullException ex)
-                    {
-                        throw new Exception(ex.Message);
-                    }
-                    catch (WebException ex)
-                    {
-                         throw new Exception(ex.Message);
-                    }
-                    catch (IOException ex)
-                    {
-                         throw new Exception(ex.Message);
-                    }
-                    catch (InvalidPaymentOrderException ex)
-                    {
-                         throw new Exception(ex.Message);
-                    }
-                    catch (ConnectionException ex)
-                    {
-                         throw new Exception(ex.Message);
-                    }
-                    catch (BaseException ex)
-                    {
-                         throw new Exception(ex.Message);
-                    }
-                    catch (Exception ex)
-                    {
-                         throw new Exception("Error:" + ex.Message);
-                    }
-                }
+            regData.paymentDetails.PaymentStatus = npr.status;
+            regData.paymentDetails.PaymentReqId = npr.id;
+            
+            db.Entry(regData.paymentDetails).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
 
-                #endregion
-                #region   2. Get All your Payment Orders List
-                //  Get All your Payment Orders
-                try
-                {
-                    PaymentOrderListRequest objPaymentOrderListRequest = new PaymentOrderListRequest();
-                    //Optional Parameters
-                    objPaymentOrderListRequest.limit = 21;
-                    objPaymentOrderListRequest.page = 3;
-
-                    PaymentOrderListResponse objPaymentRequestStatusResponse = objClass.getPaymentOrderList(objPaymentOrderListRequest);
-                    foreach (var item in objPaymentRequestStatusResponse.orders)
-                    {
-                        Console.WriteLine(item.email + item.description + item.amount);
-                    }
-                    Console.Write("Order List = " + objPaymentRequestStatusResponse.orders.Count());
-                }
-                catch (ArgumentNullException ex)
-                {
-                     throw new Exception(ex.Message);
-                }
-                catch (WebException ex)
-                {
-                     throw new Exception(ex.Message);
-                }
-                catch (Exception ex)
-                {
-                     throw new Exception("Error:" + ex.Message);
-                }
-                #endregion
-
-                #region   3. Get details of this payment order Using Order Id
-                ////  Get details of this payment order
-                try
-                {
-                    PaymentOrderDetailsResponse objPaymentRequestDetailsResponse = objClass.getPaymentOrderDetails("3189cff7c68245bface8915cac1f"); //"3189cff7c68245bface8915cac1f89df");
-                    Console.Write("Transaction Id = " + objPaymentRequestDetailsResponse.transaction_id);
-                }
-                catch (ArgumentNullException ex)
-                {
-                     throw new Exception(ex.Message);
-                }
-                catch (WebException ex)
-                {
-                     throw new Exception(ex.Message);
-                }
-                catch (Exception ex)
-                {
-                     throw new Exception("Error:" + ex.Message);
-                }
-                #endregion
-
-                #region   4. Get details of this payment order Using TransactionId
-                ////  Get details of this payment order Using TransactionId
-                try
-                {
-                    PaymentOrderDetailsResponse objPaymentRequestDetailsResponse = objClass.getPaymentOrderDetailsByTransactionId("test1");
-                    Console.Write("Transaction Id = " + objPaymentRequestDetailsResponse.transaction_id);
-                }
-                catch (ArgumentNullException ex)
-                {
-                     throw new Exception(ex.Message);
-                }
-                catch (WebException ex)
-                {
-                     throw new Exception(ex.Message);
-                }
-                catch (Exception ex)
-                {
-                     throw new Exception("Error:" + ex.Message);
-                }
-                #endregion
-
-                #region   5. Create Refund
-                //  Create Payment Order
-                Refund objRefundRequest = new Refund();
-                //Required POST parameters
-                //objPaymentRequest.name = "ABCD";
-                objRefundRequest.payment_id = "MOJO6701005J41260385";
-                objRefundRequest.type = "TNR";
-                objRefundRequest.body = "abcd";
-                objRefundRequest.refund_amount = 9;
-
-                if (objRefundRequest.validate())
-                {
-                    if (objRefundRequest.payment_idInvalid)
-                    {
-                         throw new Exception("payment_id is not valid");
-                    }
-                }
-                else
-                {
-                    try
-                    {
-                        CreateRefundResponce objRefundResponse = objClass.createNewRefundRequest(objRefundRequest);
-                        Console.Write("Refund Id = " + objRefundResponse.refund.id);
-                    }
-                    catch (ArgumentNullException ex)
-                    {
-                         throw new Exception(ex.Message);
-                    }
-                    catch (WebException ex)
-                    {
-                         throw new Exception(ex.Message);
-                    }
-                    catch (IOException ex)
-                    {
-                         throw new Exception(ex.Message);
-                    }
-                    catch (InvalidPaymentOrderException ex)
-                    {
-                         throw new Exception(ex.Message);
-                    }
-                    catch (ConnectionException ex)
-                    {
-                         throw new Exception(ex.Message);
-                    }
-                    catch (BaseException ex)
-                    {
-                         throw new Exception(ex.Message);
-                    }
-                    catch (Exception ex)
-                    {
-                         throw new Exception("Error:" + ex.Message);
-                    }
-                }
-                #endregion
-
-            }
-            catch (BaseException ex)
-            {
-                 throw new Exception("CustomException" + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                 throw new Exception("Exception" + ex.Message);
-            }
-
-            return View();
+            return RedirectPermanent(npr.longurl);
         }
 
         public ActionResult Events()
@@ -298,9 +132,9 @@ namespace ABS_v1.Controllers
             {
                 string pic = System.IO.Path.GetFileName(file.FileName);
                 string path = System.IO.Path.Combine(
-                                      Server.MapPath("~/image/registration"),pic);
+                                      Server.MapPath("~/image/registration"), pic);
 
-               // path = path + "\\" + data.FullName.Trim() + Path.GetExtension(path);
+                // path = path + "\\" + data.FullName.Trim() + Path.GetExtension(path);
                 //// Get the name of the file to upload.
                 //string fileName = file.FileName;
 
@@ -324,7 +158,7 @@ namespace ABS_v1.Controllers
 
                 //    fileName = tempfileName;
                 //}
-               
+
                 // file is uploaded
                 file.SaveAs(path);
 
@@ -339,17 +173,18 @@ namespace ABS_v1.Controllers
                 data.ImageName = file.FileName;
 
             }
-           
+
             db.FormData.Add(data);
 
             db.SaveChanges();
-            return View("Registration");
+            int id = data.Id;
+            return RedirectToAction("Payment", data);
         }
 
         public ActionResult DataList()
         {
             var model = new FormData();
-            var data = db.FormData.ToList();
+            var data = db.FormData.Where(x=>x.PaymentStatus == true).ToList();
             List<FormData> _lstData = new List<FormData>();
             _lstData = data;
             model.DataList = _lstData;
@@ -380,6 +215,42 @@ namespace ABS_v1.Controllers
             return View();
         }
 
+        public async Task<ActionResult> PaymentStatus(int id)
+        {
+            PaymentModel pm = new PaymentModel();
+            pm = db.PaymentData.Where(x => x.Id == id).FirstOrDefault();
+            var status = pm.PaymentStatus;
+            var reqId = pm.PaymentReqId;
+            Instamojo.NET.Instamojo im = new Instamojo.NET.Instamojo("71ab7fc45edff7f47455a2481aff1373", "dca3a056703e4094486eb686b9ad1f4b");
+            PaymentRequest npr = await im.GetPaymentRequest(reqId);
+            FormData form = new FormData();
+            var d = db.FormData.Where(x => x.Id == pm.RegId).FirstOrDefault();
+            if (npr.status == "Completed")
+            {
+                d.PaymentStatus = true;
+                db.Entry(d).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("PaymentSucces");
+            }
+            else
+            {
+                d.PaymentStatus = false;
+                db.Entry(d).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("PaymentFailure");
 
+            }
+        }
+
+        public ActionResult PaymentSucces()
+        {
+
+            return View();
+        }
+        public ActionResult PaymentFailure()
+        {
+
+            return View();
+        }
     }
 }

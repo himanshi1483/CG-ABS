@@ -1,17 +1,71 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@model ABS_v1.Models.FormData
+<section class="contact_area section_gap" style="font-size:17px !important">
+    @using (Html.BeginForm("Payment", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+    {
+        <div class="container">
+            <fieldset>
+                <label>Name</label>
+                @Html.TextBoxFor(x => x.paymentDetails.PayeeName, new { @class = "form-control", @required = "required" })
+                <label>Email</label>
+                @Html.TextBoxFor(x => x.paymentDetails.Email, new { @class = "form-control" })
+                <label>Phone Number</label>
+                @Html.TextBoxFor(x => x.paymentDetails.PhoneNumber, new { @class = "form-control", @required = "required" })
+                <label>Amount</label>
+                @Html.TextBoxFor(x => x.paymentDetails.Amount, new { @class = "form-control", @required = "required" })
+                @*<label>TransactionId</label>
+                @Html.TextBoxFor(x => x.paymentDetails.PaymentReqId, new { @class = "form-control" })*@
+            </fieldset>
+            <div style="padding-top:20px; text-align:center">
+                <button type="submit" class="btn btn-info">Pay</button>
+            </div>
+        </div>}
+</section>
+@*@model ABS_v1.Models.FormData*@
+@*@{
+        Layout = null;
+    }
+    <a href="https://www.instamojo.com/@@himanshi1488/" rel="im-checkout" data-text="Pay" data-css-style="color:#ffffff; background:#75c26a; width:180px; border-radius:4px" data-layout="vertical"></a>
+    <script src="https://js.instamojo.com/v1/button.js"></script>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-
-</head>
-<body>
     <button onclick="onButtonClick()">
         Open Instapay
     </button>
-</body>
-</html>
+    <script src="https://js.instamojo.com/v1/checkout.js"></script>
+    <script>
+        /* Start client-defined Callback Handler Functions */
+        function onOpenHandler() {
+            alert('Payments Modal is Opened');
+        }
+
+        function onCloseHandler() {
+            alert('Payments Modal is Closed');
+        }
+
+        function onPaymentSuccessHandler(response) {
+            alert('Payment Success');
+            @Model.PaymentStatus = true;
+            console.log('Payment Success Response', response);
+        }
+
+        function onPaymentFailureHandler(response) {
+            alert('Payment Failure');
+             @Model.PaymentStatus = false;
+            console.log('Payment Failure Response', response);
+        }
+        /* End client-defined Callback Handler Functions */
+
+        /* Configuring Handlers */
+        Instamojo.configure({
+            handlers: {
+                onOpen: onOpenHandler,
+                onClose: onCloseHandler,
+                onSuccess: onPaymentSuccessHandler,
+                onFailure: onPaymentFailureHandler
+            }
+        });
+
+        function onButtonClick() {
+            Instamojo.open("https://www.instamojo.com/@@himanshi1488?checkout=remote&iframe=1&embed=form");
+        }
+    </script>*@
+
