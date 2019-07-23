@@ -1,4 +1,6 @@
-﻿@{
+﻿@model ABS_v1.Models.ContactModel
+
+@{
     ViewBag.Title = "संपर्क";
 }
 <section class="breadcrumb_area br_image">
@@ -7,12 +9,48 @@
             <h2 class="page-cover-tittle">
                 संपर्क
             </h2>
-            <!--<ol class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li class="active">Contact Us</li>
-            </ol>-->
+
         </div>
     </div>
 </section>
-<div class="container">
+<section class="event_blog_area section_gap">
+    <div class="container">
+        <h4 style="text-align:center"> हमसे संपर्क करने के लिए  नीचे दिया गया पूछताछ फॉर्म भरें</h4>
+        <br />
+        <br />
+        @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+        {
+            <div class="row">
+
+                @Html.AntiForgeryToken()
+                <div class="col-md-12" style="padding-left:10%; padding-right:10%;">
+                    <div class="form-group row">
+                        <label for="txtFullName" class="col-md-2 col-form-label">पूरा नाम</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.FullName, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtFullName" class="col-md-2 col-form-label">फ़ोन नंबर </label>
+                        <div class="col-sm-10">
+                            @*@Html.TextBoxFor(x => x.FullName, new { @class = "form-control" })*@
+                            @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtBirthday" class="col-md-2 col-form-label">
+                            संदेश
+                        </label>
+                        <div class="col-sm-10">
+                            @Html.TextAreaFor(x => x.Message, new { @class = "form-control" })
+                            @*@Html.TextBoxFor(x => x.BirthDay, new { @class = "form-control" })*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" style="text-align:center">
+                    <button type="submit">Submit</button>
+                </div>
+
+            </div>}
     </div>
+</section>

@@ -1,0 +1,51 @@
+﻿@model ABS_v1.Models.ContactModel
+@{
+    ViewBag.Title = "Contacts List";
+}
+<link href="https://fonts.googleapis.com/css?family=Sumana&display=swap" rel="stylesheet">
+@*<link href="~/css/table.css" rel="stylesheet" />*@
+
+<section class="breadcrumb_area br_image">
+    <div class="container">
+        <div class="page-cover text-center">
+            <h2 class="page-cover-tittle">सन्देश सूचि </h2>
+            <!--<ol class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Contact Us</li>
+            </ol>-->
+        </div>
+    </div>
+</section>
+<section class="contact_area section_gap">
+    <div class="container">
+        <div class="table-responsive-vertical shadow-z-1">
+            <table id="table" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th data-title="SrNo">क्र.</th>
+                        <th data-title="FullName">पूरा नाम</th>
+                        <th>फ़ोन नंबर</th>
+                        <th>संदेश</th>
+                        <th>समय</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @*@foreach (var item in Model.DataList)*@
+                    @for (int i = 0; i < Model.ContactList.Count; i++)
+                    {
+                        <tr>
+                            <td>@(i + 1)</td>
+                            <td>@Model.ContactList[i].FullName</td>
+                            <td>@Model.ContactList[i].PhoneNumber</td>
+                            <td>@Model.ContactList[i].Message</td>
+                            <td>@Model.ContactList[i].Date</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+

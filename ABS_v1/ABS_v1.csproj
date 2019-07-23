@@ -52,6 +52,9 @@
     <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
+    <Reference Include="InstamojoAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\InstamojoAPI.dll.1.0.1\lib\InstamojoAPI.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -226,8 +229,13 @@
     <Compile Include="Migrations\201906210704495_init6.Designer.cs">
       <DependentUpon>201906210704495_init6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906270841567_init61.cs" />
+    <Compile Include="Migrations\201906270841567_init61.Designer.cs">
+      <DependentUpon>201906270841567_init61.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ContactModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\RegistrationModel.cs" />
@@ -287,6 +295,10 @@
     <Content Include="image\donate.jpg" />
     <Content Include="image\event.jpg" />
     <Content Include="image\favicon.png" />
+    <Content Include="image\gallery\event1.jpeg" />
+    <Content Include="image\gallery\event2.jpeg" />
+    <Content Include="image\gallery\event3.jpeg" />
+    <Content Include="image\gallery\event4.jpeg" />
     <Content Include="image\gallery\galery13.jpeg" />
     <Content Include="image\gallery\gallery1.jpeg" />
     <Content Include="image\gallery\gallery10.jpeg" />
@@ -301,7 +313,26 @@
     <Content Include="image\gallery\gallery19.jpeg" />
     <Content Include="image\gallery\gallery2.jpeg" />
     <Content Include="image\gallery\gallery20.jpeg" />
+    <Content Include="image\gallery\gallery21.jpg" />
+    <Content Include="image\gallery\gallery22.jpeg" />
+    <Content Include="image\gallery\gallery23.jpeg" />
+    <Content Include="image\gallery\gallery24.jpeg" />
+    <Content Include="image\gallery\gallery25.jpeg" />
+    <Content Include="image\gallery\gallery26.jpeg" />
+    <Content Include="image\gallery\gallery27.jpeg" />
+    <Content Include="image\gallery\gallery28.jpeg" />
+    <Content Include="image\gallery\gallery29.jpeg" />
     <Content Include="image\gallery\gallery3.jpeg" />
+    <Content Include="image\gallery\gallery30.jpeg" />
+    <Content Include="image\gallery\gallery31.jpeg" />
+    <Content Include="image\gallery\gallery32.jpeg" />
+    <Content Include="image\gallery\gallery33.jpeg" />
+    <Content Include="image\gallery\gallery34.jpeg" />
+    <Content Include="image\gallery\gallery35.jpeg" />
+    <Content Include="image\gallery\gallery36.jpeg" />
+    <Content Include="image\gallery\gallery37.jpeg" />
+    <Content Include="image\gallery\gallery38.jpeg" />
+    <Content Include="image\gallery\gallery39.jpeg" />
     <Content Include="image\gallery\gallery4.jpeg" />
     <Content Include="image\gallery\gallery5.jpeg" />
     <Content Include="image\gallery\gallery6.jpeg" />
@@ -425,7 +456,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -465,6 +498,9 @@
     <Content Include="Views\Home\FormDetails.cshtml" />
     <Content Include="Views\Home\Members.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Home\ContactsList.cshtml" />
+    <Content Include="Views\Shared\PaymentPage.cshtml" />
+    <Content Include="Views\Home\Payment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -504,6 +540,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906210704495_init6.resx">
       <DependentUpon>201906210704495_init6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906270841567_init61.resx">
+      <DependentUpon>201906270841567_init61.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

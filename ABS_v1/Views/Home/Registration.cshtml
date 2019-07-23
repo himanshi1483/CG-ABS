@@ -4,6 +4,7 @@
     ViewBag.Title = "Registration";
 }
 
+
 <section class="breadcrumb_area br_image">
     <div class="container">
         <div class="page-cover text-center">
@@ -17,7 +18,8 @@
 </section>
 <section class="contact_area section_gap" style="font-size:17px !important">
     <div class="container">
-        @using (Html.BeginForm("AddRegistration", "Home", FormMethod.Post,  new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+
+        @using (Html.BeginForm("AddRegistration", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
             <div class="row">
@@ -162,9 +164,56 @@
                 </div>
             </div>
             <div style="text-align:center">
-                <button type="submit">Submit</button>
+                <button onclick="onButtonClick()">
+                    Click here to pay the registration fees
+                </button>
+            </div>
+            <br />
+            <br />
+            <div style="text-align:center">
+                <button id="btnSubmit" disabled="disabled" type="submit">Save Details</button>
             </div>
         }
+
+
+
     </div>
 </section>
 
+<script src="https://js.instamojo.com/v1/checkout.js"></script>
+<script>
+    /* Start client-defined Callback Handler Functions */
+    //function onOpenHandler() {
+    //    alert('Payments Modal is Opened');
+    //}
+
+    //function onCloseHandler() {
+    //    alert('Payments Modal is Closed');
+    //}
+
+    function onPaymentSuccessHandler(response) {
+        alert('Payment Success');
+        $("#btnSubmit").enable();
+        console.log('Payment Success Response', response);
+    }
+
+    function onPaymentFailureHandler(response) {
+        alert('Payment Failure');
+        console.log('Payment Failure Response', response);
+    }
+    /* End client-defined Callback Handler Functions */
+
+    /* Configuring Handlers */
+    Instamojo.configure({
+        handlers: {
+            onOpen: onOpenHandler,
+            onClose: onCloseHandler,
+            onSuccess: onPaymentSuccessHandler,
+            onFailure: onPaymentFailureHandler
+        }
+    });
+
+    function onButtonClick() {
+        Instamojo.open('https://www.instamojo.com/@@cg_abs');
+    }
+</script>
