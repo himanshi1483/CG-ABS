@@ -211,9 +211,9 @@ span.round-tab:hover {
     
 }
 .br_image {
-    background: -webkit-linear-gradient(left, rgba(4, 9, 30, .80), rgba(4, 9, 30, .80)), url('/image/temple-cover.jpg');
-    background: -o-linear-gradient(left, rgba(4, 9, 30, .80), rgba(4, 9, 30, .80)), url('/image/temple-cover.jpg');
-    background: linear-gradient(to right, rgba(4, 9, 30, .80), rgba(4, 9, 30, .80)), url('/image/temple-cover.jpg');
+    background: -webkit-linear-gradient(left, rgba(4, 9, 30, .80), rgba(4, 9, 30, .80)), url('/image/temple-cover.jpg') !important;
+    background: -o-linear-gradient(left, rgba(4, 9, 30, .80), rgba(4, 9, 30, .80)), url('/image/temple-cover.jpg') !important;
+    background: linear-gradient(to right, rgba(4, 9, 30, .80), rgba(4, 9, 30, .80)), url('/image/temple-cover.jpg') !important;
 }
 .page-cover-tittle{
     display: block;
@@ -251,13 +251,14 @@ a:hover, a:focus {
 body {
   line-height: 24px;
   font-size: 14px;
-font-family: 'Martel', serif !important;
+  font-family: 'Martel', serif !important;
   font-weight: 300;
-  color: #777777;
+  color: #000;
+  background-color:#ffeead;
 }
 
 section {
-  background: #fff;
+   background: url("/image/bg-image.png") !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -371,10 +372,11 @@ button:focus {
   -webkit-transition: background 0.4s, all 0.3s linear;
   -o-transition: background 0.4s, all 0.3s linear;
   transition: background 0.4s, all 0.3s linear;
+  background: url("/image/bg-image.png") repeat !important;
 }
 
 .header_area .navbar {
-  background: transparent;
+  background:#ffeead;
   padding: 0px;
   border: 0px;
   border-radius: 0px;
@@ -503,7 +505,7 @@ button:focus {
 }
 
 .header_area + section {
-  margin-top: 91px !important;
+  margin-top: 70px !important;
 }
 
 .header_area.navbar_fixed {
@@ -521,7 +523,7 @@ button:focus {
 }
 
 .header_area.navbar_fixed .navbar {
-  background: #fff;
+  background: #ffeead;
 }
 
 .header_top .social_icon li a {
@@ -558,7 +560,7 @@ button:focus {
 /*----------------------------------------------------*/
 /*=========== event_date_area css ==========*/
 .event_date_area {
-  background: #eba422;
+  background: #eba422 !important;
   padding: 30px 0px;
 }
 
@@ -847,6 +849,7 @@ h3 {
 
 .event_two .event_post {
   margin-bottom: 50px;
+  border: 1px solid black;
 }
 
 /*============ event_details_area css ==========*/
@@ -867,11 +870,11 @@ h3 {
 /*----------------------------------------------------*/
 /*============ banner_area css =============*/
 .banner_area {
-    min-height: 680px;
-    background: -webkit-gradient(linear, left top, right top, from(rgba(4, 9, 30, 0.4)), to(rgba(4, 9, 30, 0.8))), url("../image/banner.jpg");
-    background: -webkit-linear-gradient(left, rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.4)), url("../image/banner.jpg");
-    background: -o-linear-gradient(left, rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.4)), url("../image/banner.jpg");
-    background: linear-gradient(to right, rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.4)), url("../image/banner.jpg");
+    min-height: 420px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(4, 9, 30, 0.4)), to(rgba(4, 9, 30, 0.8))), url("../image/banner.jpg") !important;
+    background: -webkit-linear-gradient(left, rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.4)), url("../image/banner.jpg") !important;
+    background: -o-linear-gradient(left, rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.4)), url("../image/banner.jpg") !important;
+    background: linear-gradient(to right, rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.4)), url("../image/banner.jpg") !important;
     background-size: cover;
 }
 
@@ -982,10 +985,10 @@ h3 {
 }
 
 .br_image {
-  background: -webkit-linear-gradient(left, rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.8)), url("../image/breadcrumb.jpg");
-  background: -o-linear-gradient(left, rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.8)), url("../image/breadcrumb.jpg");
-  background: -webkit-gradient(linear, left top, right top, from(rgba(4, 9, 30, 0.8)), to(rgba(4, 9, 30, 0.8))), url("../image/breadcrumb.jpg");
-  background: linear-gradient(to right, rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.8)), url("../image/breadcrumb.jpg");
+  background: -webkit-linear-gradient(left, rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.8)), url("../image/breadcrumb.jpg") !important;
+  background: -o-linear-gradient(left, rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.8)), url("../image/breadcrumb.jpg") !important;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(4, 9, 30, 0.8)), to(rgba(4, 9, 30, 0.8))), url("../image/breadcrumb.jpg") !important;
+  background: linear-gradient(to right, rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.8)), url("../image/breadcrumb.jpg") !important;
 }
 
 .page-cover-tittle {

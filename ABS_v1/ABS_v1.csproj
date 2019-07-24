@@ -240,6 +240,14 @@
     <Compile Include="Migrations\201907230901042_init9.Designer.cs">
       <DependentUpon>201907230901042_init9.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907231224206_init10.cs" />
+    <Compile Include="Migrations\201907231224206_init10.Designer.cs">
+      <DependentUpon>201907231224206_init10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907231225206_init11.cs" />
+    <Compile Include="Migrations\201907231225206_init11.Designer.cs">
+      <DependentUpon>201907231225206_init11.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ContactModel.cs" />
@@ -290,6 +298,7 @@
     <Content Include="image\about.jpg" />
     <Content Include="image\banner-1.jpg" />
     <Content Include="image\banner.jpg" />
+    <Content Include="image\bg-image.png" />
     <Content Include="image\bg1.jpg" />
     <Content Include="image\blog1.jpg" />
     <Content Include="image\blog2.jpg" />
@@ -556,6 +565,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907230901042_init9.resx">
       <DependentUpon>201907230901042_init9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907231224206_init10.resx">
+      <DependentUpon>201907231224206_init10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907231225206_init11.resx">
+      <DependentUpon>201907231225206_init11.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

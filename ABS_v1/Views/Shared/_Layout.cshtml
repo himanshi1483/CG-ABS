@@ -6,7 +6,7 @@
     <link rel="icon" href="image/favicon.png" type="image/png">
     <title>छत्तीसगढ़ प्रांतीय अखंड ब्राम्हण समाज</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.css"  media="all">
+    <link rel="stylesheet" href="/css/bootstrap.css" media="all">
     <link rel="stylesheet" href="/vendors/linericon/style.css" media="all">
     <link rel="stylesheet" href="/css/font-awesome.min.css" media="all">
     <link rel="stylesheet" href="/vendors/owl-carousel/owl.carousel.min.css" media="all">
@@ -15,7 +15,7 @@
     <!-- main css -->
     <link href="~/css/members/style.css" rel="stylesheet" media="all" />
     <link href="https://fonts.googleapis.com/css?family=Kurale&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Halant|Kurale|Laila|Rhodium+Libre|Sahitya|Sura|Yatra+One&display=swap" rel="stylesheet">    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Kalam|Noto+Sans|Halant|Kurale|Laila|Rhodium+Libre|Sahitya|Sura|Yatra+One&display=swap" rel="stylesheet">    <!-- Bootstrap CSS -->
 
     <link rel="stylesheet" href="/css/style.css" media="all">
     <link rel="stylesheet" href="/css/responsive.css" media="all">
@@ -26,8 +26,8 @@
     </style>
     <style>
         body {
-            font-family: Sumana !important;
-            font-size: 18px !important;
+            font-family: Noto Sans !important;
+            font-size: 16px !important;
         }
     </style>
 </head>
@@ -54,66 +54,152 @@
                     </div>
                 </div>
             </div>*@
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light" style="color:#000 !important">
             <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="@Url.Action("Index", "Home")"><img src="~/image/logo.jpg" style="max-height:91px; max-width:91px" alt=""></a>
+                <a class="navbar-brand logo_h" href="@Url.Action("Index", "Home")"><img src="~/image/logo.jpg" style="max-height:70px; max-width:70px" alt=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse offset" id="navbarSupportedContent" style="font-size:20px">
-                    <ul class="nav navbar-nav menu_nav ml-auto">
-                        <li class="nav-item active"><a class="nav-link" href="@Url.Action("Index", "Home")">मुख्य पृष्ठ</a></li>
-                        <!--<li class="nav-item"><a class="nav-link" href="ministries.html">Minisrtries</a></li>-->
-                        <li class="nav-item"><a class="nav-link" href="@Url.Action("About", "Home")">समाचार </a></li>
-                        <li class="nav-item">
-                            <a href="@Url.Action("Events", "Home")" class="nav-link">आयोजन</a>
-
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 20%;">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="@Url.Action("Index", "Home")">
+                                <i class="fa fa-home"></i>
+                                मुख्य पृष्ठ
+                                @*<span class="sr-only">(current)</span>*@
+                            </a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Members", "Home")">पदाधिकारी</a></li>
-                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Gallery", "Home")">गैलरी</a></li>
-                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Contact", "Home")">संपर्क</a></li>
-                        @if (Request.IsAuthenticated)
-                        {
-                            <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">सूची</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="@Url.Action("DataList", "Home")">आवेदकों की सूची</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="@Url.Action("ContactsList", "Home")">सन्देश सूची</a></li>
-                                </ul>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("About", "Home")">
+                                <i class="fa fa-newspaper-o">
 
+                                </i>
+                                समाचार
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=" @Url.Action("Events", "Home")">
+                                <i class="fa fa-calendar-o">
+
+                                </i>
+                                आयोजन
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=" @Url.Action("Members", "Home")">
+                                <i class="fa fa-user">
+
+                                </i>
+                                पदाधिकारी
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=" @Url.Action("Gallery", "Home")">
+                                <i class="fa fa-picture-o">
+
+                                </i>
+                                गैलरी
+                            </a>
+                        </li> @if (Request.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-list-ol">
+                                    </i>
+                                    सूची
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="@Url.Action("DataList", "Home")">आवेदकों की सूची</a>
+                                    <a class="dropdown-item" href="@Url.Action("ContactList", "Home")">सन्देश सूची</a>
+
+                                </div>
+                            </li>
                         }
-                        <!--<li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
-                                <li class="nav-item"><a class="nav-link" href="donation.html">Donation</a></li>
-                                <li class="nav-item"><a class="nav-link" href="gallery.html">गैलरी</a></li>
-                                <li class="nav-item"><a class="nav-link" href="elements.html">संपर्क</a></li>
-                            </ul>
-                        </li>-->
-                        <!--<li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>
-                            </ul>
-                        </li>-->
-                        <!--<li class="nav-item"><a class="nav-link" href="contact.html">संपर्क</a></li>-->
+                        <li class="nav-item">
+                            <a class="nav-link" href=" @Url.Action("Contact", "Home")">
+                                <i class="fa fa-credit-card"></i>
+                                संपर्क
+                            </a>
+                        </li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    @*<ul class="navbar-nav ">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-bell">
+                        <span class="badge badge-info">11</span>
+                    </i>
+                    Test
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-globe">
+                        <span class="badge badge-success">11</span>
+                    </i>
+                    Test
+                </a>
+            </li>
+        </ul>*@
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    @*<a class="navbar-brand logo_h" href="@Url.Action("Index", "Home")"><img src="~/image/logo.jpg" style="max-height:70px; max-width:70px" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse offset" id="navbarSupportedContent" style="font-size:20px">
+            <ul class="nav navbar-nav menu_nav ml-auto">
+                <li class="nav-item active"><a class="nav-link" href="@Url.Action("Index", "Home")">मुख्य पृष्ठ</a></li>
+                <!--<li class="nav-item"><a class="nav-link" href="ministries.html">Minisrtries</a></li>-->
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("About", "Home")">समाचार </a></li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Events", "Home")" class="nav-link">आयोजन</a>
+
+                </li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("Members", "Home")">पदाधिकारी</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("Gallery", "Home")">गैलरी</a></li>
+                <li class="nav-item"><a class="nav-link" href="@Url.Action("Contact", "Home")">संपर्क</a></li>
+                @if (Request.IsAuthenticated)
+                {
+                    <li class="nav-item submenu dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">सूची</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("DataList", "Home")">आवेदकों की सूची</a></li>
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("ContactsList", "Home")">सन्देश सूची</a></li>
+                        </ul>
+                    </li>
+
+                }*@
+                    <!--<li class="nav-item submenu dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+        <ul class="dropdown-menu">
+            <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="donation.html">Donation</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">गैलरी</a></li>
+            <li class="nav-item"><a class="nav-link" href="elements.html">संपर्क</a></li>
+        </ul>
+    </li>-->
+                    <!--<li class="nav-item submenu dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+        <ul class="dropdown-menu">
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>
+        </ul>
+    </li>-->
+                    <!--<li class="nav-item"><a class="nav-link" href="contact.html">संपर्क</a></li>
+    </ul>-->
+                    @*<ul class="nav navbar-nav navbar-right">
                         <li class="nav-item"><a href="#" class="search"><i class="lnr lnr-magnifier"></i></a></li>
-                    </ul>
+                    </ul>*@
                     <ul class="nav navbar-nav navbar-right">
                         @Html.Partial("_LoginPartial")
                     </ul>
                 </div>
-            </div>
-        </nav>
+                </div>
+</nav>
     </header>
     <!--================Header Area =================-->
     @RenderBody()
