@@ -33,7 +33,7 @@ namespace ABS_v1.Models
         public string InformantDetails { get; set; }
         public string ImageName { get; set; }
         public DateTime RegDate { get; set; }
-       
+      
         public bool PaymentStatus { get; set; }
         public string RegPlace { get; set; }
         [NotMapped]

@@ -53,7 +53,7 @@
       <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Instamojo.NET">
-      <HintPath>..\..\..\..\Downloads\Instamojo.NET.dll</HintPath>
+      <HintPath>C:\Users\himan\Downloads\Instamojo.NET.dll</HintPath>
     </Reference>
     <Reference Include="InstamojoAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\InstamojoAPI.dll.1.0.1\lib\InstamojoAPI.dll</HintPath>
@@ -240,13 +240,9 @@
     <Compile Include="Migrations\201907230901042_init9.Designer.cs">
       <DependentUpon>201907230901042_init9.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907231224206_init10.cs" />
-    <Compile Include="Migrations\201907231224206_init10.Designer.cs">
-      <DependentUpon>201907231224206_init10.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907231225206_init11.cs" />
-    <Compile Include="Migrations\201907231225206_init11.Designer.cs">
-      <DependentUpon>201907231225206_init11.cs</DependentUpon>
+    <Compile Include="Migrations\201907231236161_init11.cs" />
+    <Compile Include="Migrations\201907231236161_init11.Designer.cs">
+      <DependentUpon>201907231236161_init11.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -298,7 +294,6 @@
     <Content Include="image\about.jpg" />
     <Content Include="image\banner-1.jpg" />
     <Content Include="image\banner.jpg" />
-    <Content Include="image\bg-image.png" />
     <Content Include="image\bg1.jpg" />
     <Content Include="image\blog1.jpg" />
     <Content Include="image\blog2.jpg" />
@@ -566,11 +561,8 @@
     <EmbeddedResource Include="Migrations\201907230901042_init9.resx">
       <DependentUpon>201907230901042_init9.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907231224206_init10.resx">
-      <DependentUpon>201907231224206_init10.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907231225206_init11.resx">
-      <DependentUpon>201907231225206_init11.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907231236161_init11.resx">
+      <DependentUpon>201907231236161_init11.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -61,22 +61,23 @@ namespace ABS_v1.Controllers
         }
 
 
-        public ActionResult Payment(FormData regData)
+        public ActionResult Payment(int regId)
         {
             ViewBag.Message = "Your contact page.";
-
-            return View("Payment", regData);
+            FormData formData = new FormData();
+            formData = db.FormData.Where(x => x.Id == regId).FirstOrDefault();
+            return View("Payment", formData);
 
         }
 
         [HttpPost]
-        public async Task<ActionResult> Payment(PaymentModel model, FormData regData)
+        public async Task<ActionResult> Payment(FormData formData)
         {
 
-            regData.paymentDetails.PaymentStatus = "";
-            regData.paymentDetails.PaymentReqId = "";
-            regData.paymentDetails.RegId = regData.Id;
-            db.PaymentData.Add(regData.paymentDetails);
+            formData.paymentDetails.PaymentStatus = "";
+            formData.paymentDetails.PaymentReqId = "";
+            formData.paymentDetails.RegId = formData.Id;
+            db.PaymentData.Add(formData.paymentDetails);
             db.SaveChanges();
 
             //Instamojo.NET.Instamojo im = new Instamojo.NET.Instamojo("test_f2b269c4e7c933a88107ebfff76", "test_500c9ec9e355d7e79bf577d050b");
@@ -85,21 +86,21 @@ namespace ABS_v1.Controllers
             PaymentRequest pr = new PaymentRequest();
             
             pr.allow_repeated_payments = false;
-            pr.amount = regData.paymentDetails.Amount.ToString();
-            pr.buyer_name = regData.paymentDetails.PayeeName;
-            pr.email = regData.paymentDetails.Email;
-            pr.phone = regData.paymentDetails.PhoneNumber;
+            pr.amount = formData.paymentDetails.Amount.ToString();
+            pr.buyer_name = formData.paymentDetails.PayeeName;
+            pr.email = formData.paymentDetails.Email;
+            pr.phone = formData.paymentDetails.PhoneNumber;
             pr.send_email = true;
             pr.send_sms = true;
-            pr.redirect_url = "http://localhost:55347/Home/PaymentStatus?id=" + regData.paymentDetails.Id;
-            //pr.webhook = "https://naveen.me/webhook";
+            pr.redirect_url = "http://akhandbramhansamaj.in/Home/PaymentStatus?id=" + formData.paymentDetails.Id;
+        
             pr.purpose = "Registration Fees";
             PaymentRequest npr = await im.CreatePaymentRequest(pr);
 
-            regData.paymentDetails.PaymentStatus = npr.status;
-            regData.paymentDetails.PaymentReqId = npr.id;
+            formData.paymentDetails.PaymentStatus = npr.status;
+            formData.paymentDetails.PaymentReqId = npr.id;
             
-            db.Entry(regData.paymentDetails).State = System.Data.Entity.EntityState.Modified;
+            db.Entry(formData.paymentDetails).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
 
             return RedirectPermanent(npr.longurl);
@@ -177,10 +178,11 @@ namespace ABS_v1.Controllers
             db.FormData.Add(data);
 
             db.SaveChanges();
-            int id = data.Id;
-            return RedirectToAction("Payment", data);
+            int regId = data.Id;
+            return RedirectToAction("Payment", new { @regId = regId });
         }
 
+        [Authorize]
         public ActionResult DataList()
         {
             var model = new FormData();
@@ -191,6 +193,7 @@ namespace ABS_v1.Controllers
             return View(model);
         }
 
+        [Authorize]
         public ActionResult ContactsList()
         {
             var model = new ContactModel();
@@ -201,6 +204,7 @@ namespace ABS_v1.Controllers
             return View(model);
         }
 
+        [Authorize]
         public ActionResult FormDetails(int id)
         {
             var model = new FormData();
