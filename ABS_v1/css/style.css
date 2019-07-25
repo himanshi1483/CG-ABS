@@ -249,12 +249,12 @@ a:hover, a:focus {
 }
 
 body {
-  line-height: 24px;
-  font-size: 14px;
-  font-family: 'Martel', serif !important;
-  font-weight: 300;
-  color: #000;
-  background-color:#ffeead;
+    line-height: 24px;
+    font-size: 14px;
+    font-family: 'Martel', serif !important;
+    font-weight: 300;
+    color: #000;
+    background-image: linear-gradient(to bottom, #ff9859, #fd9252, #fc8b4b, #fa8544, #f87e3d);
 }
 
 section {
@@ -375,12 +375,12 @@ button:focus {
   background: url("/image/bg-image.png") repeat !important;
 }
 
-.header_area .navbar {
-  background:#ffeead;
-  padding: 0px;
-  border: 0px;
-  border-radius: 0px;
-}
+    .header_area .navbar {
+        background: #FF9859;
+        padding: 0px;
+        border: 0px;
+        border-radius: 0px;
+    }
 
 .header_area .navbar .nav .nav-item .nav-link {
   font: 700 17px/70px "Martel", serif;
@@ -522,9 +522,9 @@ button:focus {
   display: none;
 }
 
-.header_area.navbar_fixed .navbar {
-  background: #ffeead;
-}
+    .header_area.navbar_fixed .navbar {
+        background: #FF9859;
+    }
 
 .header_top .social_icon li a {
   font-size: 12px;
@@ -560,8 +560,8 @@ button:focus {
 /*----------------------------------------------------*/
 /*=========== event_date_area css ==========*/
 .event_date_area {
-  background: #eba422 !important;
-  padding: 30px 0px;
+    background: #D86745 !important;
+    padding: 30px 0px;
 }
 
 .flex {
@@ -981,7 +981,7 @@ h3 {
   background: #04091e;
   z-index: 1;
   overflow: hidden;
-  margin-top:91px;
+  margin-top:70px;
 }
 
 .br_image {

@@ -294,6 +294,7 @@
     <Content Include="image\about.jpg" />
     <Content Include="image\banner-1.jpg" />
     <Content Include="image\banner.jpg" />
+    <Content Include="image\bg-image.png" />
     <Content Include="image\bg1.jpg" />
     <Content Include="image\blog1.jpg" />
     <Content Include="image\blog2.jpg" />
@@ -371,6 +372,10 @@
     <Content Include="image\members\yogeshtiwari2.jpeg" />
     <Content Include="image\NEWS1.jpg" />
     <Content Include="image\news2.jpg" />
+    <Content Include="image\border1.png" />
+    <Content Include="image\border2.png" />
+    <Content Include="image\border3.png" />
+    <Content Include="image\border4.png" />
     <Content Include="image\parshuram.png" />
     <Content Include="image\sermns.jpg" />
     <Content Include="image\slider1.jpeg" />
