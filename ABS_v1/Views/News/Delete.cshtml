@@ -1,0 +1,72 @@
+﻿@model ABS_v1.Models.NewsModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>NewsModel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NewsDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NewsDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NewsTitle)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NewsTitle)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NewsDescription)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NewsDescription)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Location)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Location)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Image)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

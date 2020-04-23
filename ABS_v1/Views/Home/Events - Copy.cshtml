@@ -1,4 +1,4 @@
-﻿@model ABS_v1.Models.EventModel
+﻿
 @{
     ViewBag.Title = "Events";
 }
@@ -280,28 +280,7 @@
         </div>
 
         <div class="row event_two">
-            @foreach (var item in Model.EventList.OrderByDescending(x=>x.EventDate))
-            {
-                <div class="col-lg-12 col-sm-6">
-                    <div class="event_post" style="text-align:center;background-color:#fed2c5">
 
-                        <a href="#"><h2 class="event_title">@item.EventName</h2></a>
-                        <img style="height:40%;width:40%" src="~/image/gallery/event1.jpeg" alt="">
-                        <ul class="list_style sermons_category event_category">
-                            @*<li><i class="lnr lnr-user"></i>@item.EventDate</li>*@
-                            <li><i class="lnr lnr-apartment"></i>@item.EventLocation</li>
-                            <li>
-                                <div>
-                                    @item.EventDescription
-                                </div>
-                            </li>
-                        </ul>
-                        @*<a href="#" class="btn_hover">
-                        विस्तृत जानकारी
-                    </a>*@
-                    </div>
-                </div>
-            }
             <div class="col-lg-12 col-sm-6">
                 <div class="event_post" style="text-align:center;background-color:#fed2c5">
 
@@ -318,8 +297,8 @@
                         </li>
                     </ul>
                     @*<a href="#" class="btn_hover">
-                    विस्तृत जानकारी
-                </a>*@
+            विस्तृत जानकारी
+        </a>*@
                 </div>
             </div>
             <div class="col-lg-12 col-sm-6">
@@ -337,8 +316,8 @@
                         </li>
                     </ul>
                     @*<a href="#" class="btn_hover">
-                    विस्तृत जानकारी
-                </a>*@
+            विस्तृत जानकारी
+        </a>*@
                 </div>
             </div>
             <div class="col-lg-12 col-sm-6">
@@ -356,83 +335,83 @@
                         </li>
                     </ul>
                     @*<a href="#" class="btn_hover">
-                    विस्तृत जानकारी
-                </a>*@
+            विस्तृत जानकारी
+        </a>*@
                 </div>
             </div>
 
             @*<div class="col-lg-4 col-sm-6">
-            <div class="event_post">
-                <img src="~/image/blog1.jpg" alt="">
-                <a href="#"><h2 class="event_title">व्रतबन्ध संस्कार</h2></a>
-                <ul class="list_style sermons_category event_category">
-                    <li><i class="lnr lnr-user"></i>2018</li>
-                    <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
-                    <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA</li>
-                </ul>
-                <a href="#" class="btn_hover">
-                    विस्तृत जानकारी
-                </a>
+                <div class="event_post">
+                    <img src="~/image/blog1.jpg" alt="">
+                    <a href="#"><h2 class="event_title">व्रतबन्ध संस्कार</h2></a>
+                    <ul class="list_style sermons_category event_category">
+                        <li><i class="lnr lnr-user"></i>2018</li>
+                        <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
+                        <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA</li>
+                    </ul>
+                    <a href="#" class="btn_hover">
+                        विस्तृत जानकारी
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-            <div class="event_post">
-                <img src="~/image/blog1.jpg" alt="">
-                <a href="#"><h2 class="event_title">शैक्षणिक सम्मान समारोह</h2></a>
-                <ul class="list_style sermons_category event_category">
-                    <li><i class="lnr lnr-user"></i>शनिवार, 5th may, 2018</li>
-                    <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
-                    <li>
-                        <i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA
-                    </li>
-                </ul>
-                <a href="#" class="btn_hover">
-                    विस्तृत जानकारी
-                </a>
+            <div class="col-lg-4 col-sm-6">
+                <div class="event_post">
+                    <img src="~/image/blog1.jpg" alt="">
+                    <a href="#"><h2 class="event_title">शैक्षणिक सम्मान समारोह</h2></a>
+                    <ul class="list_style sermons_category event_category">
+                        <li><i class="lnr lnr-user"></i>शनिवार, 5th may, 2018</li>
+                        <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
+                        <li>
+                            <i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA
+                        </li>
+                    </ul>
+                    <a href="#" class="btn_hover">
+                        विस्तृत जानकारी
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-            <div class="event_post">
-                <img src="~/image/blog1.jpg" alt="">
-                <a href="#"><h2 class="event_title">शैक्षणिक सम्मान समारोह</h2></a>
-                <ul class="list_style sermons_category event_category">
-                    <li><i class="lnr lnr-user"></i>शनिवार, 5th may, 2018</li>
-                    <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
-                    <li><i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA</li>
-                </ul>
-                <a href="#" class="btn_hover">
-                    विस्तृत जानकारी
-                </a>
-            </div>
-        </div>*@
+            <div class="col-lg-4 col-sm-6">
+                <div class="event_post">
+                    <img src="~/image/blog1.jpg" alt="">
+                    <a href="#"><h2 class="event_title">शैक्षणिक सम्मान समारोह</h2></a>
+                    <ul class="list_style sermons_category event_category">
+                        <li><i class="lnr lnr-user"></i>शनिवार, 5th may, 2018</li>
+                        <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
+                        <li><i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA</li>
+                    </ul>
+                    <a href="#" class="btn_hover">
+                        विस्तृत जानकारी
+                    </a>
+                </div>
+            </div>*@
             @* <div class="col-lg-4 col-sm-6">
-            <div class="event_post">
-                <img src="~/image/blog1.jpg" alt="">
-                <a href="#"><h2 class="event_title">शैक्षणिक सम्मान समारोह</h2></a>
-                <ul class="list_style sermons_category event_category">
-                    <li><i class="lnr lnr-user"></i>शनिवार, 5th may, 2018</li>
-                    <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
-                    <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA</li>
-                </ul>
-                <a href="#" class="btn_hover">
-                    विस्तृत जानकारी
-                </a>
+                <div class="event_post">
+                    <img src="~/image/blog1.jpg" alt="">
+                    <a href="#"><h2 class="event_title">शैक्षणिक सम्मान समारोह</h2></a>
+                    <ul class="list_style sermons_category event_category">
+                        <li><i class="lnr lnr-user"></i>शनिवार, 5th may, 2018</li>
+                        <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
+                        <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA</li>
+                    </ul>
+                    <a href="#" class="btn_hover">
+                        विस्तृत जानकारी
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-            <div class="event_post">
-                <img src="~/image/bg1.jpg" alt="">
-                <a href="#"><h2 class="event_title">शैक्षणिक सम्मान समारोह</h2></a>
-                <ul class="list_style sermons_category event_category">
-                    <li><i class="lnr lnr-user"></i>शनिवार, 5th may, 2018</li>
-                    <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
-                    <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA</li>
-                </ul>
-                <a href="#" class="btn_hover">
-                    विस्तृत जानकारी
-                </a>
-            </div>
-        </div>*@
+            <div class="col-lg-4 col-sm-6">
+                <div class="event_post">
+                    <img src="~/image/bg1.jpg" alt="">
+                    <a href="#"><h2 class="event_title">शैक्षणिक सम्मान समारोह</h2></a>
+                    <ul class="list_style sermons_category event_category">
+                        <li><i class="lnr lnr-user"></i>शनिवार, 5th may, 2018</li>
+                        <li><i class="lnr lnr-apartment"></i>विप्र भवन, रायपुर </li>
+                        <li>@*<i class="lnr lnr-location"></i>Santa monica, Los Angeles, USA</li>
+                    </ul>
+                    <a href="#" class="btn_hover">
+                        विस्तृत जानकारी
+                    </a>
+                </div>
+            </div>*@
         </div>
     </div>
 </section>

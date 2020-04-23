@@ -1,0 +1,72 @@
+﻿@model IEnumerable<ABS_v1.Models.EventModel>
+
+<link href="https://fonts.googleapis.com/css?family=Sumana&display=swap" rel="stylesheet">
+@*<link href="~/css/table.css" rel="stylesheet" />*@
+
+<section class="breadcrumb_area br_image">
+    <div class="container">
+        <div class="page-cover text-center">
+            <h2 class="page-cover-tittle">आवेदकों की सूची</h2>
+            <!--<ol class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Contact Us</li>
+            </ol>-->
+        </div>
+    </div>
+</section>
+<section class="contact_area section_gap">
+    <div class="container">
+        <div class="table-responsive-vertical shadow-z-1">
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EventDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EventName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EventDescription)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EventLocation)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Image)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventLocation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Image)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.EventId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.EventId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.EventId })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</section>  

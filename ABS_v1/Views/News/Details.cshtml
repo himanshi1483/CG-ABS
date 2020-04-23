@@ -1,0 +1,66 @@
+﻿@model ABS_v1.Models.NewsModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>NewsModel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NewsDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NewsDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NewsTitle)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NewsTitle)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NewsDescription)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NewsDescription)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Location)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Location)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Image)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.NewsId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

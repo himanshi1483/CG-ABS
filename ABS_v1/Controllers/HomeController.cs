@@ -28,9 +28,12 @@ namespace ABS_v1.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            var model = new NewsModel();
+            ViewBag.Message = "Your contact page.";
+            var list = db.News.OrderByDescending(x => x.NewsDate).ToList();
+            model.NewsList = list;
+            return View(model);
 
-            return View();
         }
 
         public ActionResult Contact()
@@ -108,9 +111,11 @@ namespace ABS_v1.Controllers
 
         public ActionResult Events()
         {
+            var model = new EventModel();
             ViewBag.Message = "Your contact page.";
-
-            return View();
+            var list = db.Events.OrderByDescending(x => x.EventDate).ToList();
+            model.EventList = list;
+            return View(model);
         }
 
         public ActionResult Registration(FormData model)

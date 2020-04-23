@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ABS_v1.Models.NewsModel>
+
+<link href="https://fonts.googleapis.com/css?family=Sumana&display=swap" rel="stylesheet">
+@*<link href="~/css/table.css" rel="stylesheet" />*@
+
+<section class="breadcrumb_area br_image">
+    <div class="container">
+        <div class="page-cover text-center">
+            <h2 class="page-cover-tittle">Add Event</h2>
+            <!--<ol class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Contact Us</li>
+            </ol>-->
+        </div>
+    </div>
+</section>
+<section class="contact_area section_gap">
+    <div class="container">
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NewsDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NewsTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NewsDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Location)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Image)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NewsDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NewsTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NewsDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Image)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.NewsId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.NewsId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.NewsId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</section>
