@@ -6,7 +6,7 @@
 <section class="breadcrumb_area br_image">
     <div class="container">
         <div class="page-cover text-center">
-            <h2 class="page-cover-tittle">आवेदकों की सूची</h2>
+            <h2 class="page-cover-tittle">आयोजन</h2>
             <!--<ol class="breadcrumb">
                 <li><a href="index.html">Home</a></li>
                 <li class="active">Contact Us</li>
@@ -18,7 +18,8 @@
     <div class="container">
         <div class="table-responsive-vertical shadow-z-1">
             <p>
-                @Html.ActionLink("Create New", "Create")
+                @*@Html.ActionLink("नया समाचार जोड़ें", "Create")*@
+                <a href="@Url.Action("Create")" class="btn btn-warning">नया आयोजन जोड़ें</a>
             </p>
             <table class="table">
                 <tr>
