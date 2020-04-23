@@ -21,7 +21,7 @@ namespace ABS_v1.Models
         [Display(Name = "आयोजन स्थल")]
         public string EventLocation { get; set; }
         [Display(Name = "फ़ोटो ")]    
-        public byte[] Image { get; set; }
+        public string Image { get; set; }
         [NotMapped]
         public List<EventModel> EventList { get; set; }
     }

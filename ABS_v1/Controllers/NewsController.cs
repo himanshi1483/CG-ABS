@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -46,16 +47,32 @@ namespace ABS_v1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NewsId,NewsDate,NewsTitle,NewsDescription,Location,Image")] NewsModel newsModel)
+        public ActionResult Create([Bind(Include = "NewsId,NewsDate,NewsTitle,NewsDescription,Location,Image")] NewsModel newsModel, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
+                var originalFilename = Path.GetFileName(file.FileName);
+                var ext = Path.GetExtension(file.FileName);
+                var newFileName = newsModel.NewsId.ToString() + ext;
+                var path = Path.Combine(Server.MapPath(@"~/Uploads/News/"), newsModel.NewsId.ToString() + ext);
+                file.SaveAs(path);
+                newsModel.Image = newFileName;
+
                 db.News.Add(newsModel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             return View(newsModel);
+        }
+
+        public byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
+            }
         }
 
         // GET: News/Edit/5
@@ -78,10 +95,20 @@ namespace ABS_v1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "NewsId,NewsDate,NewsTitle,NewsDescription,Location,Image")] NewsModel newsModel)
+        public ActionResult Edit([Bind(Include = "NewsId,NewsDate,NewsTitle,NewsDescription,Location,Image")] NewsModel newsModel, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
+                if(file != null)
+                {
+                    var originalFilename = Path.GetFileName(file.FileName);
+                    var ext = Path.GetExtension(file.FileName);
+                    var newFileName = newsModel.NewsId.ToString() + ext;
+                    var path = Path.Combine(Server.MapPath(@"~/Uploads/News/"), newsModel.NewsId.ToString() + ext);
+                    file.SaveAs(path);
+                    newsModel.Image = newFileName;
+
+                }
                 db.Entry(newsModel).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

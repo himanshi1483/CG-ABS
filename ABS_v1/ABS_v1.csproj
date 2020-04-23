@@ -250,6 +250,10 @@
     <Compile Include="Migrations\201908021033346_init12.Designer.cs">
       <DependentUpon>201908021033346_init12.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004231148202_init23.cs" />
+    <Compile Include="Migrations\202004231148202_init23.Designer.cs">
+      <DependentUpon>202004231148202_init23.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ContactModel.cs" />
@@ -545,6 +549,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="image\registration\" />
+    <Folder Include="Uploads\Events\" />
+    <Folder Include="Uploads\News\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -592,6 +598,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908021033346_init12.resx">
       <DependentUpon>201908021033346_init12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004231148202_init23.resx">
+      <DependentUpon>202004231148202_init23.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using ABS_v1.Models;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using ABS_v1.Models;
 
 namespace ABS_v1.Controllers
 {
@@ -46,10 +44,19 @@ namespace ABS_v1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EventId,EventDate,EventName,EventDescription,EventLocation,Image")] EventModel eventModel)
+        public ActionResult Create([Bind(Include = "EventId,EventDate,EventName,EventDescription,EventLocation,Image")] EventModel eventModel, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
+                var originalFilename = Path.GetFileName(file.FileName);
+                var ext = Path.GetExtension(file.FileName);
+
+                var newFileName = eventModel.EventId.ToString() + ext;
+                var path = Path.Combine(Server.MapPath(@"~/Uploads/Events/"), eventModel.EventId.ToString() + ext);
+                file.SaveAs(path);
+                eventModel.Image = newFileName;
+
+
                 db.Events.Add(eventModel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,10 +85,21 @@ namespace ABS_v1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EventId,EventDate,EventName,EventDescription,EventLocation,Image")] EventModel eventModel)
+        public ActionResult Edit([Bind(Include = "EventId,EventDate,EventName,EventDescription,EventLocation,Image")] EventModel eventModel, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
+                if (file != null)
+                {
+                    var originalFilename = Path.GetFileName(file.FileName);
+                    var ext = Path.GetExtension(file.FileName);
+                    var newFileName = eventModel.EventId.ToString() + ext;
+                    var path = Path.Combine(Server.MapPath(@"~/Uploads/Events/"), eventModel.EventId.ToString() + ext);
+                    file.SaveAs(path);
+                    eventModel.Image = newFileName;
+
+
+                }
                 db.Entry(eventModel).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

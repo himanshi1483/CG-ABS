@@ -20,7 +20,7 @@ namespace ABS_v1.Models
         [Display(Name = "समाचार स्थल")]
         public string Location { get; set; }
         [Display(Name = "फ़ोटो")]
-        public byte[] Image { get; set; }
+        public string Image { get; set; }
         [NotMapped]
         public List<NewsModel> NewsList { get; set; }
     }
